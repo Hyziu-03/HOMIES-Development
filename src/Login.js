@@ -1,12 +1,10 @@
-import { Link } from 'react-router-dom';
+import Menu from './Menu';
 
 const Login = () => {
   return (
     <article className='login'>
-        <h1 className='heading'>Jesteś na stronie logowania!</h1>
-        <Link to='/'>
-            <button className='button'>Wróć do startu</button>
-        </Link>
+      <Menu />
+      <h1 className='subpage-heading'>Jesteś na stronie logowania!</h1>
     </article>
   );
 }
