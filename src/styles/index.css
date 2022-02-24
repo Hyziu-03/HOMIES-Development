@@ -1,0 +1,91 @@
+/* SASS installation needed */
+
+* {
+    /* Reset */
+
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Colour palette needed */
+}
+
+.App {
+    /* Center */
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    /* Fullscreen */
+
+    width: 100vw;
+    height: calc(100vh - 50px);
+}
+
+/* Heading */
+
+.heading, .subpage-heading {
+    text-align: center;
+}
+
+.subpage-heading {
+    margin: 32px 0;
+}
+
+/* Button */
+
+.button {
+    margin: 16px;
+    padding: 16px;
+    background-color: darkcyan;
+    color: whitesmoke;
+    border: none;
+}
+
+/* Menu */
+
+.menu {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: darkcyan;
+}
+
+.menu-item {
+    margin: 16px;
+    padding: 16px;
+    color: whitesmoke;
+}
+
+/* Link */
+
+.link {
+    text-decoration: none;
+}
+
+/* Components */
+
+.login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 50px);
+}
+
+.quote {
+    text-align: center;
+    max-width: 80vw;
+}
+.start-button {
+    position: relative;
+    top: 320px;
+    width: 80vw;
+}
