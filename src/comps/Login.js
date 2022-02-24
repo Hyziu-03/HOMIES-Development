@@ -1,12 +1,23 @@
-import { Link } from 'react-router-dom';
+import Logo from "./Logo";
 
 const Login = () => {
   return (
     <article className='login'>
-      <p className='quote'>Curabitur tincidunt lorem lobortis lorem venenatis, et porttitor dui porttitor. Nam vel malesuada tortor.</p>
-      <Link to='/zbieranina'>
-        <button className='start-button button'>Zacznij</button>
-      </Link>
+        <Logo />
+        <form action='' method='' className='form'>
+            <input type='email' id='email-login' className='input'/>
+            <input type='password' id='password-login' className='input'/> 
+            <p className='password-tooltip'>Nie pamiętasz hasła?</p>
+            <input type='button' value='Zaloguj się' id='button-login' className='button login-button'/>
+
+            <span>Apple</span>
+            <span>Google</span>
+            <span>Facebook</span>
+
+            <hr/>
+
+            Nie masz konta? Zarejestruj się
+        </form>
     </article>
   );
 }
