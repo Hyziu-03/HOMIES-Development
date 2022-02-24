@@ -1,3 +1,5 @@
+import Menu from './Menu';
+
 const Latest = () => {
     return (
         <article>
