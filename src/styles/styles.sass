@@ -1,0 +1,35 @@
+@mixin reset-defaults
+    padding: 0
+    margin: 0
+    box-sizing: border-box
+
+@mixin display-fullscreen
+    width: 100vw
+    height: calc(100vh - 50px)
+
+@mixin center-both-axes
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+
+@mixin use-hypertext
+    text-decoration: none
+    color: inherit
+
+*
+    @include reset-defaults
+
+html
+    font-family: sans-serif
+
+.App
+    @include display-fullscreen
+    @include center-both-axes
+
+.link
+    @include use-hypertext
+
+.quote
+    text-align: center
+    max-width: 80vw
