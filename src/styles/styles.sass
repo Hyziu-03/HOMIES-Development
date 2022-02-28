@@ -1,21 +1,4 @@
-@mixin reset-defaults
-    padding: 0
-    margin: 0
-    box-sizing: border-box
-
-@mixin display-fullscreen
-    width: 100vw
-    height: calc(100vh - 50px)
-
-@mixin center-both-axes
-    display: flex
-    flex-direction: column
-    align-items: center
-    justify-content: center
-
-@mixin use-hypertext
-    text-decoration: none
-    color: inherit
+@import ./modules
 
 *
     @include reset-defaults
@@ -31,5 +14,99 @@ html
     @include use-hypertext
 
 .quote
+    /* Correct width */
     text-align: center
     max-width: 80vw
+
+.heading, .subpage-heading 
+    /* Correct logic */
+    @include heading
+
+.subpage-heading 
+    /* Correct spacing */
+    margin: 32px 0
+    
+.button 
+    @include button
+
+.start-button, .login-button 
+    /* Correct logic and width */
+    width: 80vw
+
+.menu 
+    /* Correct colours */
+    list-style-type: none
+    display: flex
+    justify-content: center
+    position: fixed
+    bottom: 0
+    width: 100%
+    background-color: darkcyan
+
+
+.menu-item 
+    /* Correct spacing and colours */
+    margin: 16px
+    padding: 16px
+    color: whitesmoke
+
+.start, .login, .signup 
+    @include display-fullscreen
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: space-around
+
+.password-input 
+    display: flex
+    flex-direction: column
+
+.password-tooltip 
+    /* Correct spacing */
+    font-size: 0.75rem
+    font-weight: bold
+    align-self: flex-end
+    margin-right: 16px
+
+.form 
+    /* Correct logic */
+    display: flex
+    flex-direction: column
+    align-items: center
+
+
+.input 
+    /* Correct logic, spacing, width and colours */
+    width: 80vw
+    margin: 8px
+    padding: 16px
+    background-color: whitesmoke
+    color: darkslategray
+    border: none
+
+#apple-icon, #google-icon, #facebook-icon 
+    /* Correct spacing and colours */
+    margin: 0 16px
+    font-size: 24px
+    padding: 16px
+    background-color: whitesmoke
+
+.social-media-login 
+    /* Correct logic */
+    display: flex
+    justify-content: space-around
+
+.break 
+    /* Correct spacing, width and colours */
+    background-color: whitesmoke
+    height: 5px
+    width: 100vw
+    margin: 32px 0
+
+.footer-text 
+    font-weight: bold
+
+.checkbox-label 
+    /* Correct logic */
+    display: flex
+    justify-content: flex-start
