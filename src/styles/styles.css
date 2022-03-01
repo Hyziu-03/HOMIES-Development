@@ -33,7 +33,6 @@ html {
 }
 
 .quote {
-  /* Correct width */
   text-align: center;
   max-width: 80vw;
 }
@@ -44,26 +43,23 @@ html {
 }
 
 .subpage-heading {
-  /* Correct spacing */
   margin: 32px 0;
 }
 
 .button {
-  /* Correct spacing and colours */
   margin: 32px;
   padding: 16px;
-  background-color: darkcyan;
-  color: whitesmoke;
+  background-color: #3f37c9;
+  color: #ffffff;
   border: none;
 }
 
 .start-button, .login-button {
-  /* Correct logic and width */
+  /* Correct logic */
   width: 80vw;
 }
 
 .menu {
-  /* Correct colours */
   list-style-type: none;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -74,14 +70,13 @@ html {
   position: fixed;
   bottom: 0;
   width: 100%;
-  background-color: darkcyan;
+  background-color: #3f37c9;
 }
 
 .menu-item {
-  /* Correct spacing and colours */
   margin: 16px;
   padding: 16px;
-  color: whitesmoke;
+  color: #ffffff;
 }
 
 .start, .login, .signup {
@@ -112,8 +107,7 @@ html {
 }
 
 .password-tooltip {
-  /* Correct spacing */
-  font-size: 0.75rem;
+  font-size: 12px;
   font-weight: bold;
   -ms-flex-item-align: end;
       align-self: flex-end;
@@ -135,21 +129,20 @@ html {
 }
 
 .input {
-  /* Correct logic, spacing, width and colours */
+  /* Correct logic */
   width: 80vw;
   margin: 8px;
   padding: 16px;
-  background-color: whitesmoke;
-  color: darkslategray;
+  background-color: #ffffff;
+  color: #0b090a;
   border: none;
 }
 
 #apple-icon, #google-icon, #facebook-icon {
-  /* Correct spacing and colours */
   margin: 0 16px;
   font-size: 24px;
   padding: 16px;
-  background-color: whitesmoke;
+  background-color: #ffffff;
 }
 
 .social-media-login {
@@ -162,8 +155,7 @@ html {
 }
 
 .break {
-  /* Correct spacing, width and colours */
-  background-color: whitesmoke;
+  background-color: #ffffff;
   height: 5px;
   width: 100vw;
   margin: 32px 0;
@@ -178,8 +170,20 @@ html {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  width: 80vw;
+}
+
+.checkbox-container {
+  /* Correct logic */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.checkbox-label {
+  white-space: nowrap;
 }
 /*# sourceMappingURL=styles.css.map */

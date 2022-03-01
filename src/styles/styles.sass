@@ -1,4 +1,4 @@
-@import ./modules
+@import ../utils/modules
 
 *
     @include reset-defaults
@@ -6,7 +6,7 @@
 html
     font-family: sans-serif
 
-.App
+.App 
     @include display-fullscreen
     @include center-both-axes
 
@@ -14,41 +14,36 @@ html
     @include use-hypertext
 
 .quote
-    /* Correct width */
     text-align: center
-    max-width: 80vw
+    max-width: $wide
 
 .heading, .subpage-heading 
     /* Correct logic */
     @include heading
 
 .subpage-heading 
-    /* Correct spacing */
-    margin: 32px 0
+    margin: $base * 2 0
     
 .button 
     @include button
 
 .start-button, .login-button 
-    /* Correct logic and width */
-    width: 80vw
+    /* Correct logic */
+    width: $wide
 
 .menu 
-    /* Correct colours */
     list-style-type: none
     display: flex
     justify-content: center
     position: fixed
     bottom: 0
     width: 100%
-    background-color: darkcyan
-
+    background-color: $dark-blue
 
 .menu-item 
-    /* Correct spacing and colours */
-    margin: 16px
-    padding: 16px
-    color: whitesmoke
+    margin: $base
+    padding: $base
+    color: $white
 
 .start, .login, .signup 
     @include display-fullscreen
@@ -62,11 +57,10 @@ html
     flex-direction: column
 
 .password-tooltip 
-    /* Correct spacing */
-    font-size: 0.75rem
+    font-size: $base * 0.75
     font-weight: bold
     align-self: flex-end
-    margin-right: 16px
+    margin-right: $base
 
 .form 
     /* Correct logic */
@@ -76,20 +70,19 @@ html
 
 
 .input 
-    /* Correct logic, spacing, width and colours */
-    width: 80vw
-    margin: 8px
-    padding: 16px
-    background-color: whitesmoke
-    color: darkslategray
+    /* Correct logic */
+    width: $wide
+    margin: $base * 0.5
+    padding: $base
+    background-color: $white
+    color: $black
     border: none
 
 #apple-icon, #google-icon, #facebook-icon 
-    /* Correct spacing and colours */
-    margin: 0 16px
-    font-size: 24px
-    padding: 16px
-    background-color: whitesmoke
+    margin: 0 $base
+    font-size: $base * 1.5
+    padding: $base
+    background-color: $white
 
 .social-media-login 
     /* Correct logic */
@@ -97,11 +90,10 @@ html
     justify-content: space-around
 
 .break 
-    /* Correct spacing, width and colours */
-    background-color: whitesmoke
+    background-color: $white
     height: 5px
     width: 100vw
-    margin: 32px 0
+    margin: $base * 2 0
 
 .footer-text 
     font-weight: bold
@@ -109,4 +101,12 @@ html
 .checkbox-label 
     /* Correct logic */
     display: flex
-    justify-content: flex-start
+    width: $wide
+
+.checkbox-container
+    /* Correct logic */
+    display: flex
+    align-items: center
+
+.checkbox-label
+    white-space: nowrap

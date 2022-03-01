@@ -1,3 +1,14 @@
+$wide: 80vw
+$base: 16px
+
+$red: #f2542d
+$orange: #ffbe0b
+$yellow: #ffd000
+$light-blue: #a2d2ff
+$dark-blue: #3f37c9
+$white: #ffffff
+$black: #0b090a
+
 @mixin reset-defaults
     padding: 0
     margin: 0
@@ -21,9 +32,8 @@
     text-align: center
 
 @mixin button
-    /* Correct spacing and colours */
-    margin: 32px
-    padding: 16px
-    background-color: darkcyan
-    color: whitesmoke
+    margin: $base * 2
+    padding: $base
+    background-color: $dark-blue
+    color: $white
     border: none
