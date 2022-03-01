@@ -7,9 +7,9 @@ const Start = () => {
 
       <Logo />
       
-      <p className='quote'>Curabitur tincidunt lorem lobortis lorem venenatis, et porttitor dui porttitor. Nam vel malesuada tortor.</p>
+      <p className='quote' tabIndex='0'>Curabitur tincidunt lorem lobortis lorem venenatis, et porttitor dui porttitor. Nam vel malesuada tortor.</p>
 
-      <Link to='/logowanie'><button className='start-button button'>Zacznij</button></Link>
+      <Link to='/logowanie' tabIndex='0'><button className='start-button button'>Zacznij</button></Link>
 
     </article>
   );

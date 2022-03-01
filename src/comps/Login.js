@@ -9,23 +9,23 @@ const Login = () => {
 
         <form action='' method='' className='form'>
 
-            <input type='email' id='email-login' className='input' placeholder='Adres email'/>
+            <input type='email' id='email-login' className='input' placeholder='Adres email' tabIndex='0'/>
 
             <span className='password-input'>
 
-              <input type='password' id='password-login' className='input' placeholder='Hasło'/> 
+              <input type='password' id='password-login' className='input' placeholder='Hasło' tabIndex='0'/> 
 
-              <p className='password-tooltip'>Nie pamiętasz hasła?</p>
+              <p className='password-tooltip' tabIndex='0'>Nie pamiętasz hasła?</p>
 
             </span>
 
-            <Link to='/zbieranina'><input type='button' value='Zaloguj się' id='button-login' className='button login-button'/></Link>
+            <Link to='/zbieranina' tabIndex='0'><input type='button' value='Zaloguj się' id='button-login' className='button login-button'/></Link>
 
             <section className='social-media-login'>
 
-              <i className='fa-brands fa-apple' id='apple-icon'></i>
-              <i className='fa-brands fa-google' id='google-icon'></i>
-              <i className='fa-brands fa-facebook-f' id='facebook-icon'></i>
+              <i className='fa-brands fa-apple' id='apple-icon' tabIndex='0'></i>
+              <i className='fa-brands fa-google' id='google-icon' tabIndex='0'></i>
+              <i className='fa-brands fa-facebook-f' id='facebook-icon' tabIndex='0'></i>
 
             </section>
 
@@ -33,7 +33,7 @@ const Login = () => {
 
             <footer>
 
-              Nie masz konta? <span className='footer-text'><Link to='/rejestracja' className='link'>Zarejestruj się</Link></span>
+              Nie masz konta? <span className='footer-text'><Link to='/rejestracja' className='link' tabIndex='0'>Zarejestruj się</Link></span>
 
             </footer>
 

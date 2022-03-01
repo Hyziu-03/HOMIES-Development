@@ -4,9 +4,9 @@ function App() {
   return (
     <article className='App'>
 
-      <h1 className='heading'>Hi HOMIES!</h1>
+      <h1 className='heading' tabIndex='0'>Hi HOMIES!</h1>
       
-      <Link to='/zacznij'><button className='button'>Przejdź na stronę logowania</button></Link>
+      <Link to='/zacznij' tabIndex='0'><button className='button'>Przejdź na stronę logowania</button></Link>
 
     </article>
   );

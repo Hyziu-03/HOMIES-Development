@@ -6,7 +6,7 @@ const Zbieranina = () => {
 
       <Menu />
       
-      <h1 className='subpage-heading'>Jesteś w Zbieraninie!</h1>
+      <h1 className='subpage-heading' tabIndex='0'>Jesteś w Zbieraninie!</h1>
 
     </article>
   );
