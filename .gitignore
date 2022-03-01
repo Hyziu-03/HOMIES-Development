@@ -1,4 +1,9 @@
+# Downloaded modules:
+
 node_modules
+
+# Automatically generated CSS files:
+
 src/styles/styles.css.map
 src/utils/modules.css.map
 src/utils/modules.css
