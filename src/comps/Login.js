@@ -23,9 +23,9 @@ const Login = () => {
 
             <section className='social-media-login'>
 
-              <i className='fa-brands fa-apple' id='apple-icon' tabIndex='0'></i>
-              <i className='fa-brands fa-google' id='google-icon' tabIndex='0'></i>
-              <i className='fa-brands fa-facebook-f' id='facebook-icon' tabIndex='0'></i>
+              <i className='fa-brands fa-apple social-media' tabIndex='0'></i>
+              <i className='fa-brands fa-google social-media' tabIndex='0'></i>
+              <i className='fa-brands fa-facebook-f social-media' tabIndex='0'></i>
 
             </section>
 

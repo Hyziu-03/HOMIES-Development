@@ -1,5 +1,9 @@
+/* Sizing units: */
+    
 $wide: 80vw
 $base: 16px
+
+/* Colours */
 
 $red: #f2542d
 $orange: #ffbe0b
@@ -9,14 +13,22 @@ $dark-blue: #3f37c9
 $white: #ffffff
 $black: #0b090a
 
+/* Utilities: */
+
 @mixin reset-defaults
     padding: 0
     margin: 0
     box-sizing: border-box
 
+@mixin use-hypertext
+    text-decoration: none
+    color: inherit
+
+/* Layout: */
+
 @mixin display-fullscreen
     width: 100vw
-    height: calc(100vh - 50px)
+    height: calc(100vh - $base * 2.5)
 
 @mixin center-both-axes
     display: flex
@@ -24,9 +36,12 @@ $black: #0b090a
     align-items: center
     justify-content: center
 
-@mixin use-hypertext
-    text-decoration: none
-    color: inherit
+@mixin center-vertically
+    display: flex
+    flex-direction: column
+    align-items: center
+
+/* Components: */
 
 @mixin heading
     text-align: center
