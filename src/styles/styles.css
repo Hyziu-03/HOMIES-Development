@@ -7,11 +7,12 @@
 
 html {
   font-family: sans-serif;
+  font-size: 16px;
 }
 
 .App {
   width: 100vw;
-  height: calc(100vh - 50px);
+  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -38,8 +39,8 @@ html {
 }
 
 .heading, .subpage-heading {
-  /* Correct logic */
   text-align: center;
+  font-size: 24px;
 }
 
 .subpage-heading {
@@ -55,8 +56,16 @@ html {
 }
 
 .start-button, .login-button {
-  /* Correct logic */
   width: 80vw;
+}
+
+.start-button {
+  position: relative;
+  top: 48px;
+}
+
+.footer-info {
+  text-align: center;
 }
 
 .menu {
@@ -81,7 +90,7 @@ html {
 
 .start, .login, .signup {
   width: 100vw;
-  height: calc(100vh - 50px);
+  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -92,8 +101,9 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 
 .password-input {
@@ -114,8 +124,7 @@ html {
   margin-right: 16px;
 }
 
-.form {
-  /* Correct logic */
+.form, .confirmation {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -128,8 +137,11 @@ html {
           align-items: center;
 }
 
+.confirmation {
+  margin-top: 96px;
+}
+
 .input {
-  /* Correct logic */
   width: 80vw;
   margin: 8px;
   padding: 16px;
@@ -138,7 +150,7 @@ html {
   border: none;
 }
 
-#apple-icon, #google-icon, #facebook-icon {
+.social-media {
   margin: 0 16px;
   font-size: 24px;
   padding: 16px;
@@ -146,19 +158,19 @@ html {
 }
 
 .social-media-login {
-  /* Correct logic */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .break {
   background-color: #ffffff;
   height: 5px;
   width: 100vw;
-  margin: 32px 0;
+  margin: 64px 0;
 }
 
 .footer-text {
@@ -166,7 +178,6 @@ html {
 }
 
 .checkbox-label {
-  /* Correct logic */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -174,7 +185,6 @@ html {
 }
 
 .checkbox-container {
-  /* Correct logic */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -186,4 +196,9 @@ html {
 .checkbox-label {
   white-space: nowrap;
 }
+
+.checkbox {
+  margin: 8px;
+}
+
 /*# sourceMappingURL=styles.css.map */
