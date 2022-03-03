@@ -21,7 +21,11 @@ const Login = () => {
 
             <Link to='/zbieranina' tabIndex='0'><input type='button' value='Zaloguj się' id='button-login' className='button login-button'/></Link>
 
-            <section className='social-media-login'>
+        </form>
+
+        <section className='alt-login'>
+
+          <section className='social-media-login'>
 
               <i className='fa-brands fa-apple social-media' tabIndex='0'></i>
               <i className='fa-brands fa-google social-media' tabIndex='0'></i>
@@ -29,15 +33,15 @@ const Login = () => {
 
             </section>
 
-            <hr className='break'/>
-
             <footer>
 
-              Nie masz konta? <span className='footer-text'><Link to='/rejestracja' className='link' tabIndex='0'>Zarejestruj się</Link></span>
+              <hr className='break'/>
+
+              <p className='footer-info'>Nie masz konta? <span className='footer-text'><Link to='/rejestracja' className='link' tabIndex='0'>Zarejestruj się</Link></span></p>
 
             </footer>
 
-        </form>
+        </section>
 
     </article>
   );

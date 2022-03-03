@@ -12,9 +12,14 @@ const SignUp = () => {
             <input type='text' id='last-name-ginup' className='input' placeholder='Nazwisko' tabIndex='0'/>
             <input type='email' id='email-sign-up' className='input' placeholder='Adres email' tabIndex='0'/>
             <input type='password' id='password-sign-up' className='input' placeholder='Hasło' tabIndex='0'/>
-            <span className='checkbox-container'><input type='checkbox' id='checkbox-signup' className='checkbox' /><label htmlFor='checkbox-signup' className='checkbox-label'>Akceptuję regulamin i politykę prywatności</label></span>
             
-            <button className='button'>Utwórz konto</button>
+            <section className='confirmation'>
+
+              <span className='checkbox-container'><input type='checkbox' id='checkbox-signup' className='checkbox' /><label htmlFor='checkbox-signup' className='checkbox-label'>Akceptuję regulamin i politykę prywatności</label></span>
+            
+              <button className='button'>Utwórz konto</button>
+
+            </section>
 
         </form>
 
