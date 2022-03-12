@@ -1,4 +1,5 @@
 import Logo from "./Logo";
+import { Link } from 'react-router-dom';
 
 const SignUp = () => {
   return (
@@ -15,7 +16,15 @@ const SignUp = () => {
             
             <section className='confirmation'>
 
-              <span className='checkbox-container'><input type='checkbox' id='checkbox-signup' className='checkbox' /><label htmlFor='checkbox-signup' className='checkbox-label'>Akceptuję regulamin i politykę prywatności</label></span>
+              <span className='checkbox-container'>
+                
+                <input type='checkbox' id='checkbox-signup' className='checkbox' />
+                
+                <label htmlFor='checkbox-signup' className='checkbox-label'>
+                  Akceptuję &nbsp;<Link to='/regulamin'>regulamin</Link>&nbsp; i &nbsp;<Link to='/polityka-prywatnosci'>politykę prywatności</Link>&nbsp;.
+                </label>
+                
+              </span>
             
               <button className='button'>Utwórz konto</button>
 
