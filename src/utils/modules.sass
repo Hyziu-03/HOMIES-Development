@@ -3,6 +3,10 @@
 $wide: 80vw
 $base: 16px
 
+$normal: 400
+$semi-bold: 500
+$bold: 700
+
 /* Colours */
 
 $red: #f2542d
@@ -43,9 +47,16 @@ $black: #0b090a
 
 /* Components: */
 
-@mixin heading
+@mixin heading($role)
     text-align: center
-    font-size: $base * 1.5
+
+    @if $role == primary
+        font-weight: $bold
+        font-size: $base * 3
+
+    @else if $role == secondary
+        font-weight: $semi-bold
+        font-size: $base * 1.5
 
 @mixin button
     margin: $base * 2

@@ -1,3 +1,8 @@
+/* Sizing units: */
+/* Colours */
+/* Utilities: */
+/* Layout: */
+/* Components: */
 * {
   padding: 0;
   margin: 0;
@@ -6,26 +11,9 @@
 }
 
 html {
-  font-family: sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 16px;
-}
-
-.App {
-  width: 100vw;
-  height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  font-weight: 400;
 }
 
 .link {
@@ -38,8 +26,15 @@ html {
   max-width: 80vw;
 }
 
-.heading, .subpage-heading {
+.heading {
   text-align: center;
+  font-weight: 700;
+  font-size: 48px;
+}
+
+.subpage-heading {
+  text-align: center;
+  font-weight: 500;
   font-size: 24px;
 }
 
@@ -73,9 +68,8 @@ html {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -86,6 +80,10 @@ html {
   margin: 16px;
   padding: 16px;
   color: #ffffff;
+}
+
+.vector-icon {
+  max-height: 48px;
 }
 
 .start, .login, .signup {
@@ -200,5 +198,4 @@ html {
 .checkbox {
   margin: 8px;
 }
-
 /*# sourceMappingURL=styles.css.map */

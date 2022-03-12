@@ -4,12 +4,9 @@
     @include reset-defaults
 
 html
-    font-family: sans-serif
+    font-family: 'Roboto', sans-serif 
     font-size: $base 
-
-.App 
-    @include display-fullscreen
-    @include center-both-axes
+    font-weight: $normal
 
 .link
     @include use-hypertext
@@ -18,8 +15,11 @@ html
     text-align: center
     max-width: $wide
 
-.heading, .subpage-heading 
-    @include heading
+.heading
+    @include heading($role: primary)
+
+.subpage-heading 
+    @include heading($role: secondary)
 
 .subpage-heading 
     margin: $base * 2 0
@@ -40,7 +40,7 @@ html
 .menu 
     list-style-type: none
     display: flex
-    justify-content: center
+    justify-content: space-around
     position: fixed
     bottom: 0
     width: 100%
@@ -50,6 +50,9 @@ html
     margin: $base
     padding: $base
     color: $white 
+
+.vector-icon
+    max-height: $base * 3
 
 .start, .login, .signup 
     @include display-fullscreen
