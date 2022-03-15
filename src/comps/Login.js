@@ -1,7 +1,32 @@
 import Logo from "./Logo";
 import { Link } from 'react-router-dom';
 
+import { GoogleAuthProvider, getAuth, signInWithPopup } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-auth.js";
+
+const useGoogle = () => {
+
+  const provider = new GoogleAuthProvider();
+  const auth = getAuth();
+  auth.languageCode = 'pl';
+  
+  signInWithPopup(auth, provider)
+  .then((result) => {
+
+    const user = result.user;
+    console.log(user);
+
+  }).catch((error) => {
+
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    console.log(errorCode + ': ' + errorMessage);
+     
+  });
+
+}
+
 const Login = () => {
+
   return (
     <article className='login'>
 
@@ -28,7 +53,7 @@ const Login = () => {
           <section className='social-media-login'>
 
               <i className='fa-brands fa-apple social-media' tabIndex='0'></i>
-              <i className='fa-brands fa-google social-media' tabIndex='0'></i>
+              <i className='fa-brands fa-google social-media' tabIndex='0' onClick={useGoogle}></i>
               <i className='fa-brands fa-facebook-f social-media' tabIndex='0'></i>
 
             </section>
