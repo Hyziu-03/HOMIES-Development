@@ -20,9 +20,7 @@ const SignUp = () => {
                 
                 <input type='checkbox' id='checkbox-signup' className='checkbox' />
                 
-                <label htmlFor='checkbox-signup' className='checkbox-label'>
-                  Akceptuję &nbsp;<Link to='/regulamin'>regulamin</Link>&nbsp; i &nbsp;<Link to='/polityka-prywatnosci'>politykę prywatności</Link>&nbsp;.
-                </label>
+                <label htmlFor='checkbox-signup' className='checkbox-label'>Akceptuję <Link to='/regulamin'>regulamin</Link> i <Link to='/polityka-prywatnosci'>politykę prywatności</Link> HOMIES.</label>
                 
               </span>
             
