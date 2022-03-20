@@ -1,6 +1,15 @@
 import Logo from "./Logo";
-import { Link } from 'react-router-dom';
-import { GoogleAuthProvider, getAuth, signInWithPopup } from 'https://www.gstatic.com/firebasejs/9.6.9/firebase-auth.js';
+
+import {
+  Link
+} from 'react-router-dom';
+
+import {
+  GoogleAuthProvider,
+  getAuth,
+  signInWithPopup,
+  FacebookAuthProvider
+} from 'https://www.gstatic.com/firebasejs/9.6.9/firebase-auth.js';
 
 const useGoogle = () => {
 
@@ -13,22 +22,42 @@ const useGoogle = () => {
 
       const user = result.user;
       console.log(user);
-      
+
+      let button = document.getElementById('button-login');
+      button.click();
+
     }).catch((error) => {
 
       const errorCode = error.code;
-      const errorMessage = error.message;      
+      const errorMessage = error.message;
       console.log('Error ' + errorCode + ': ' + errorMessage);
 
     });
 
 }
 
-const useApple = () => {
-
-}
-
 const useFacebook = () => {
+
+  const provider = new FacebookAuthProvider();
+  const auth = getAuth();
+  auth.languageCode = 'pl';
+
+  signInWithPopup(auth, provider)
+    .then((result) => {
+
+      const user = result.user;
+      console.log(user);
+
+      let button = document.getElementById('button-login');
+      button.click();
+
+    }).catch((error) => {
+
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.log('Error ' + errorCode + ': ' + errorMessage);
+
+    });
 
 }
 
@@ -59,7 +88,6 @@ const Login = () => {
 
           <section className='social-media-login'>
 
-              <i className='fa-brands fa-apple social-media' tabIndex='0' onClick={useApple}></i>
               <i className='fa-brands fa-google social-media' tabIndex='0' onClick={useGoogle}></i>
               <i className='fa-brands fa-facebook-f social-media' tabIndex='0' onClick={useFacebook}></i>
 
@@ -69,7 +97,7 @@ const Login = () => {
 
               <hr className='break'/>
 
-              <p className='footer-info'>Nie masz konta? <span className='footer-text'><Link to='/rejestracja' className='link' tabIndex='0'>Zarejestruj się</Link></span></p>
+              <p className='help-message'>Nie masz konta? <span className='signup-link'><Link to='/rejestracja' className='link' tabIndex='0'>Zarejestruj się</Link></span></p>
 
             </footer>
 
