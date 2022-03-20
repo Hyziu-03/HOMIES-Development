@@ -1,8 +1,16 @@
-import { Link } from 'react-router-dom';
+import {
+  Link
+} from 'react-router-dom';
+
 import Logo from './Logo';
 
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.9/firebase-app.js";
-import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.9/firebase-analytics.js";
+import {
+  initializeApp
+} from "https://www.gstatic.com/firebasejs/9.6.9/firebase-app.js";
+
+import {
+  getAnalytics
+} from "https://www.gstatic.com/firebasejs/9.6.9/firebase-analytics.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAhkZ7DS7BcnGHEwMkpOPc_7K8j8rW8b-A",
