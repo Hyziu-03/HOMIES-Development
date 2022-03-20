@@ -1,8 +1,3 @@
-/* Sizing units: */
-/* Colours */
-/* Utilities: */
-/* Layout: */
-/* Components: */
 * {
   padding: 0;
   margin: 0;
@@ -21,9 +16,12 @@ html {
   color: inherit;
 }
 
-.quote {
-  text-align: center;
-  max-width: 80vw;
+.break {
+  background-color: #0b090a;
+  border: none;
+  height: 1px;
+  width: 100vw;
+  margin: 40px 0 24px 0;
 }
 
 .heading {
@@ -58,10 +56,6 @@ html {
   top: 48px;
 }
 
-.footer-info {
-  text-align: center;
-}
-
 .menu {
   list-style-type: none;
   display: -webkit-box;
@@ -79,10 +73,6 @@ html {
   margin: 16px;
   padding: 16px;
   color: #ffffff;
-}
-
-.vector-icon {
-  max-height: 48px;
 }
 
 .start, .login, .signup {
@@ -103,31 +93,13 @@ html {
           justify-content: space-evenly;
 }
 
-.zbieranina, .terms-of-use, .privacy-policy, .settings {
+.zbieranina, .terms-of-use, .privacy-policy, .settings, .not-found {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-}
-
-.password-input {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-.password-tooltip {
-  font-size: 12px;
-  font-weight: bold;
-  -ms-flex-item-align: end;
-      align-self: flex-end;
-  margin-right: 16px;
 }
 
 .form, .confirmation {
@@ -143,6 +115,32 @@ html {
           align-items: center;
 }
 
+.password-tooltip {
+  font-size: 12px;
+  font-weight: bold;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  margin-right: 16px;
+}
+
+.checkbox-container {
+  margin: 24px;
+  line-height: 150%;
+  text-align: center;
+}
+
+.checkbox {
+  margin: 8px;
+}
+
+.signup-link {
+  font-weight: bold;
+}
+
+.help-message {
+  text-align: center;
+}
+
 .input {
   width: 80vw;
   margin: 8px;
@@ -150,6 +148,16 @@ html {
   background-color: #ffffff;
   color: #0b090a;
   border: 1px solid #0b090a;
+}
+
+.password-input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .social-media {
@@ -172,25 +180,8 @@ html {
           justify-content: center;
 }
 
-.break {
-  background-color: #0b090a;
-  border: none;
-  height: 1px;
-  width: 100vw;
-  margin: 40px 0 24px 0;
-}
-
-.footer-text {
-  font-weight: bold;
-}
-
-.checkbox-container {
-  margin: 24px;
-  line-height: 150%;
+.quote {
   text-align: center;
-}
-
-.checkbox {
-  margin: 8px;
+  max-width: 80vw;
 }
 /*# sourceMappingURL=styles.css.map */
