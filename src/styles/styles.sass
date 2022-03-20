@@ -1,3 +1,5 @@
+// Global selectors:
+    
 @import ../utils/modules
 
 *
@@ -8,12 +10,19 @@ html
     font-size: $base 
     font-weight: $normal
 
+// Utility selectors:
+
 .link
     @include use-hypertext
 
-.quote
-    text-align: center
-    max-width: $wide
+.break 
+    background-color: $black
+    border: none
+    height: 1px
+    width: 100vw
+    margin: $base * 2.5 0  $base * 1.5 0
+
+// Heading selectors:
 
 .heading
     @include heading($role: primary)
@@ -21,6 +30,8 @@ html
 .subpage-heading 
     @include heading($role: secondary)
     margin: $base * 2 0
+
+// Button selectors:
 
 .button 
     @include button
@@ -32,8 +43,7 @@ html
     position: relative
     top: $base * 3
 
-.footer-info 
-    text-align: center
+// Menu selectors:
 
 .menu 
     list-style-type: none
@@ -49,8 +59,7 @@ html
     padding: $base
     color: $white 
 
-.vector-icon
-    max-height: $base * 3
+// Pages selectors:
 
 .start, .login, .signup
     @include display-fullscreen
@@ -59,13 +68,14 @@ html
     align-items: center
     justify-content: space-evenly
 
-.zbieranina, .terms-of-use, .privacy-policy, .settings
+.zbieranina, .terms-of-use, .privacy-policy, .settings, .not-found
     display: flex
     justify-content: center
 
-.password-input 
-    display: flex
-    flex-direction: column
+// Form selectors:
+
+.form, .confirmation
+    @include center-vertically
 
 .password-tooltip 
     font-size: $base * 0.75
@@ -73,8 +83,21 @@ html
     align-self: flex-end
     margin-right: $base
 
-.form, .confirmation
-    @include center-vertically
+.checkbox-container
+    margin: $base * 1.5
+    line-height: 150%
+    text-align: center
+
+.checkbox
+    margin: $base * 0.5
+
+.signup-link
+    font-weight: bold
+
+.help-message
+    text-align: center
+
+// Input selectors:
 
 .input 
     width: $wide
@@ -83,6 +106,12 @@ html
     background-color: $white
     color: $black
     border: 1px solid $black
+
+.password-input 
+    display: flex
+    flex-direction: column
+
+// Social media login selectors:
 
 .social-media
     margin: 0 $base
@@ -97,20 +126,8 @@ html
     display: flex
     justify-content: center
 
-.break 
-    background-color: $black
-    border: none
-    height: 1px
-    width: 100vw
-    margin: $base * 2.5 0  $base * 1.5 0
+// Other selectors: 
 
-.footer-text 
-    font-weight: bold
-
-.checkbox-container
-    margin: $base * 1.5
-    line-height: 150%
+.quote
     text-align: center
-
-.checkbox
-    margin: $base * 0.5
+    max-width: $wide
