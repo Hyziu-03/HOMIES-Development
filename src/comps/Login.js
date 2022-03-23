@@ -13,51 +13,23 @@ import {
 
 const useGoogle = () => {
 
+  const button = document.getElementById('button-login');
   const provider = new GoogleAuthProvider();
   const auth = getAuth();
   auth.languageCode = 'pl';
 
-  signInWithPopup(auth, provider)
-    .then((result) => {
-
-      const user = result.user;
-      console.log(user);
-
-      let button = document.getElementById('button-login');
-      button.click();
-
-    }).catch((error) => {
-
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      console.log('Error ' + errorCode + ': ' + errorMessage);
-
-    });
+  signInWithPopup(auth, provider).then(() => button.click()).catch((error) => console.error(error.message));
 
 }
 
 const useFacebook = () => {
 
+  const button = document.getElementById('button-login');
   const provider = new FacebookAuthProvider();
   const auth = getAuth();
   auth.languageCode = 'pl';
 
-  signInWithPopup(auth, provider)
-    .then((result) => {
-
-      const user = result.user;
-      console.log(user);
-
-      let button = document.getElementById('button-login');
-      button.click();
-
-    }).catch((error) => {
-
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      console.log('Error ' + errorCode + ': ' + errorMessage);
-
-    });
+  signInWithPopup(auth, provider).then(() => button.click()).catch((error) => console.error(error.message));
 
 }
 
