@@ -8,28 +8,40 @@ import {
   GoogleAuthProvider,
   getAuth,
   signInWithPopup,
-  FacebookAuthProvider
+  FacebookAuthProvider,
+  signInWithEmailAndPassword
 } from 'https://www.gstatic.com/firebasejs/9.6.9/firebase-auth.js';
+
+const useEmail = () => {
+
+  const email = document.getElementById('email-login').value;
+  const password = document.getElementById('password-login').value;
+  const auth = getAuth();
+
+  signInWithEmailAndPassword(auth, email, password)
+    .catch((error) => console.error(error.message));
+    
+}
 
 const useGoogle = () => {
 
-  const button = document.getElementById('button-login');
   const provider = new GoogleAuthProvider();
   const auth = getAuth();
   auth.languageCode = 'pl';
 
-  signInWithPopup(auth, provider).then(() => button.click()).catch((error) => console.error(error.message));
+  signInWithPopup(auth, provider)
+    .catch((error) => console.error(error.message));
 
 }
 
 const useFacebook = () => {
 
-  const button = document.getElementById('button-login');
   const provider = new FacebookAuthProvider();
   const auth = getAuth();
   auth.languageCode = 'pl';
 
-  signInWithPopup(auth, provider).then(() => button.click()).catch((error) => console.error(error.message));
+  signInWithPopup(auth, provider)
+    .catch((error) => console.error(error.message));
 
 }
 
@@ -52,7 +64,7 @@ const Login = () => {
 
             </span>
 
-            <Link to='/zbieranina' tabIndex='0'><input type='button' value='Zaloguj się' id='button-login' className='button login-button'/></Link>
+            <Link to='' tabIndex='0'><input type='button' value='Zaloguj się' id='button-login' className='button login-button' onClick={useEmail}/></Link>
 
         </form>
 
@@ -69,7 +81,7 @@ const Login = () => {
 
               <hr className='break'/>
 
-              <p className='help-message'>Nie masz konta? <span className='signup-link'><Link to='/rejestracja' className='link' tabIndex='0'>Zarejestruj się</Link></span></p>
+              <p className='help-message'>Nie masz konta? &nbsp;<span className='signup-link'><Link to='/rejestracja' className='link' tabIndex='0'>Zarejestruj się</Link></span></p>
 
             </footer>
 

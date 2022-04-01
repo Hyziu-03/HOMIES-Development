@@ -3,6 +3,25 @@ import { Link } from 'react-router-dom';
 
 import { validateName, validateEmail, validatePassword } from "../utils/modules";
 
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  updateProfile
+}
+from "https://www.gstatic.com/firebasejs/9.6.9/firebase-auth.js";
+
+const createAccount = (email, password, firstName, lastName) => {
+
+  const auth = getAuth();
+
+  createUserWithEmailAndPassword(auth, email, password)
+    .then(() => updateProfile(auth.currentUser, {
+      displayName: firstName + ' ' + lastName
+    }))
+    .catch((error) => console.error(error.message));
+
+}
+
 const getCredentials = () => {
 
   const email = document.getElementById('email-sign-up').value;
@@ -11,10 +30,14 @@ const getCredentials = () => {
   const lastName = document.getElementById('last-name-signup').value;
   const checkbox = document.getElementById('checkbox-signup').checked;
 
-  (validateName(firstName, lastName) === true && validateEmail(email) === true && validatePassword(password) === true && checkbox) ? console.log('OK'): console.error('Not OK');
+  const isRegistered = (validateName(firstName, lastName) === true && validateEmail(email) === true && validatePassword(password) === true && checkbox) ? createAccount(email, password, firstName, lastName) : console.error('Coś poszło nie tak ');
+
 }
 
 const SignUp = () => {
+
+  let destination = '';
+
   return (
     <article className='signup'>
 
@@ -32,11 +55,11 @@ const SignUp = () => {
               <span className='checkbox-container'>
                 
                 <input type='checkbox' id='checkbox-signup' className='checkbox' />
-                <label htmlFor='checkbox-signup' className='checkbox-label'>Akceptuję <Link to='/regulamin'>regulamin</Link> i <Link to='/polityka-prywatnosci'>politykę prywatności</Link> HOMIES.</label>
+                <label htmlFor='checkbox-signup' className='checkbox-label'>Akceptuję <Link to='/regulamin' className='link'>regulamin</Link> i <Link to='/polityka-prywatnosci' className='link'>politykę prywatności</Link> HOMIES.</label>
                 
               </span>
             
-              <button className='button' type='button' onClick={getCredentials}>Utwórz konto</button>
+              <Link to={destination}><button className='button' type='button' onClick={getCredentials}>Utwórz konto</button></Link>
 
             </section>
 
