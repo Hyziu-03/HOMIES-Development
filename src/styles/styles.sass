@@ -14,6 +14,7 @@ html
 
 .link
     @include use-hypertext
+    font-weight: $bold
 
 .break 
     background-color: $black
@@ -35,6 +36,7 @@ html
 
 .button 
     @include button
+    @include be-clickable
 
 .start-button, .login-button 
     width: $wide
@@ -79,9 +81,10 @@ html
 
 .password-tooltip 
     font-size: $base * 0.75
-    font-weight: bold
     align-self: flex-end
     margin-right: $base
+    font-weight: $bold
+    @include be-clickable
 
 .checkbox-container
     margin: $base * 1.5
@@ -90,9 +93,9 @@ html
 
 .checkbox
     margin: $base * 0.5
-
-.signup-link
-    font-weight: bold
+    
+.checkbox-label
+    @include be-clickable
 
 .help-message
     text-align: center
@@ -106,6 +109,7 @@ html
     background-color: $white
     color: $black
     border: 1px solid $black
+    @include be-clickable
 
 .password-input 
     display: flex
@@ -118,6 +122,7 @@ html
     font-size: $base * 1.5
     padding: $base
     background-color: $white
+    @include be-clickable
 
     &:hover
         cursor: pointer

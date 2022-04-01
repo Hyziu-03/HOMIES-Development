@@ -24,9 +24,14 @@ $black: #0b090a
     margin: 0
     box-sizing: border-box
 
+@mixin be-clickable 
+    min-height: 48px
+    min-width: 48px
+
 @mixin use-hypertext
     text-decoration: none
     color: inherit
+    @include be-clickable
 
 // Layout:
 
@@ -62,6 +67,6 @@ $black: #0b090a
 @mixin button
     margin: $base * 2
     padding: $base
-    background-color: $dark-blue
+    background-color: $black
     color: $white
     border: none

@@ -14,6 +14,9 @@ html {
 .link {
   text-decoration: none;
   color: inherit;
+  min-height: 48px;
+  min-width: 48px;
+  font-weight: 700;
 }
 
 .break {
@@ -42,9 +45,11 @@ html {
 .button {
   margin: 32px;
   padding: 16px;
-  background-color: #3f37c9;
+  background-color: #0b090a;
   color: #ffffff;
   border: none;
+  min-height: 48px;
+  min-width: 48px;
 }
 
 .start-button, .login-button {
@@ -117,10 +122,12 @@ html {
 
 .password-tooltip {
   font-size: 12px;
-  font-weight: bold;
   -ms-flex-item-align: end;
       align-self: flex-end;
   margin-right: 16px;
+  font-weight: 700;
+  min-height: 48px;
+  min-width: 48px;
 }
 
 .checkbox-container {
@@ -133,8 +140,9 @@ html {
   margin: 8px;
 }
 
-.signup-link {
-  font-weight: bold;
+.checkbox-label {
+  min-height: 48px;
+  min-width: 48px;
 }
 
 .help-message {
@@ -148,6 +156,8 @@ html {
   background-color: #ffffff;
   color: #0b090a;
   border: 1px solid #0b090a;
+  min-height: 48px;
+  min-width: 48px;
 }
 
 .password-input {
@@ -165,6 +175,8 @@ html {
   font-size: 24px;
   padding: 16px;
   background-color: #ffffff;
+  min-height: 48px;
+  min-width: 48px;
 }
 
 .social-media:hover {
