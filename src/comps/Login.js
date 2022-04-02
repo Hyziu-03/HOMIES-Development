@@ -1,7 +1,12 @@
 import Logo from "./Logo";
 
 import {
-  Link
+  useEffect 
+} from 'react';
+
+import {
+  Link,
+  useNavigate
 } from 'react-router-dom';
 
 import {
@@ -9,7 +14,8 @@ import {
   getAuth,
   signInWithPopup,
   FacebookAuthProvider,
-  signInWithEmailAndPassword
+  signInWithEmailAndPassword,
+  onAuthStateChanged
 } from 'https://www.gstatic.com/firebasejs/9.6.9/firebase-auth.js';
 
 const useEmail = () => {
@@ -46,6 +52,12 @@ const useFacebook = () => {
 }
 
 const Login = () => {
+
+  const navigate = useNavigate();
+
+  useEffect(() => onAuthStateChanged(getAuth(), (user) => {
+    if (user) navigate('/zbieranina')
+  }));
 
   return (
     <article className='login'>
