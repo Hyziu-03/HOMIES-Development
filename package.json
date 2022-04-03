@@ -13,7 +13,10 @@
     "react-router-dom": "^6.2.1",
     "react-scripts": "5.0.0",
     "sass": "^1.49.9",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "firebase-auth": "https://www.gstatic.com/firebasejs/9.6.9/firebase-auth.js",
+    "firebase-analytics": "https://www.gstatic.com/firebasejs/9.6.9/firebase-analytics.js",
+    "firebase-app": "https://www.gstatic.com/firebasejs/9.6.9/firebase-app.js"
   },
   "scripts": {
     "start": "react-scripts start",
