@@ -1,24 +1,35 @@
-import Logo from "./Logo";
+// React imports:
+
 import { Link } from 'react-router-dom';
 
-import { validateName, validateEmail, validatePassword } from "../utils/modules";
+// Firebase imports:
 
 import {
   getAuth,
   createUserWithEmailAndPassword,
   updateProfile
-}
-from "https://www.gstatic.com/firebasejs/9.6.9/firebase-auth.js";
+} from 'firebase-auth';
+
+// Component imports:
+
+import Logo from './Logo';
+
+// Module imports: 
+
+import { validateName, validateEmail, validatePassword } from '../utils/modules';
 
 const createAccount = (email, password, firstName, lastName) => {
 
   const auth = getAuth();
 
   createUserWithEmailAndPassword(auth, email, password)
-    .then(() => updateProfile(auth.currentUser, {
-      displayName: firstName + ' ' + lastName
-    }))
-    .catch((error) => console.error(error.message));
+    .then(() => {
+      updateProfile(auth.currentUser, {
+        displayName: firstName + ' ' + lastName
+      });
+      console.log('Updated the profile of the user');
+    })
+    .catch((error) => console.error(error));
 
 }
 
@@ -30,13 +41,20 @@ const getCredentials = () => {
   const lastName = document.getElementById('last-name-signup').value;
   const checkbox = document.getElementById('checkbox-signup').checked;
 
-  const isRegistered = (validateName(firstName, lastName) === true && validateEmail(email) === true && validatePassword(password) === true && checkbox) ? createAccount(email, password, firstName, lastName) : console.error('Coś poszło nie tak ');
+  try {
+    if (validateName(firstName, lastName) === true && validateEmail(email) === true && validatePassword(password) === true && checkbox) {
+      createAccount(email, password, firstName, lastName);
+      console.log('Validated the credentials of the user');
+    } else {
+      console.error('The credentials of the user could not be verified');
+    }
+  } catch(error) {
+    console.error(error);
+  }
 
 }
 
 const SignUp = () => {
-
-  let destination = '';
 
   return (
     <article className='signup'>
@@ -54,12 +72,12 @@ const SignUp = () => {
 
               <span className='checkbox-container'>
                 
-                <input type='checkbox' id='checkbox-signup' className='checkbox' />
+                <input type='checkbox' id='checkbox-signup' className='checkbox' tabIndex='0'/>
                 <label htmlFor='checkbox-signup' className='checkbox-label'>Akceptuję <Link to='/regulamin' className='link'>regulamin</Link> i <Link to='/polityka-prywatnosci' className='link'>politykę prywatności</Link> HOMIES.</label>
                 
               </span>
             
-              <Link to={destination}><button className='button' type='button' onClick={getCredentials}>Utwórz konto</button></Link>
+              <Link to=''><button className='button' type='button' onClick={getCredentials}>Utwórz konto</button></Link>
 
             </section>
 

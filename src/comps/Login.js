@@ -1,4 +1,4 @@
-import Logo from "./Logo";
+// React imports: 
 
 import {
   useEffect 
@@ -9,6 +9,8 @@ import {
   useNavigate
 } from 'react-router-dom';
 
+// Firebase imports:
+
 import {
   GoogleAuthProvider,
   getAuth,
@@ -16,7 +18,11 @@ import {
   FacebookAuthProvider,
   signInWithEmailAndPassword,
   onAuthStateChanged
-} from 'https://www.gstatic.com/firebasejs/9.6.9/firebase-auth.js';
+} from 'firebase-auth';
+
+// Component imports:
+
+import Logo from './Logo';
 
 const useEmail = () => {
 
@@ -25,6 +31,7 @@ const useEmail = () => {
   const auth = getAuth();
 
   signInWithEmailAndPassword(auth, email, password)
+    .then(() => console.log('Authenticated the user with email and password'))
     .catch((error) => console.error(error.message));
     
 }
@@ -36,6 +43,7 @@ const useGoogle = () => {
   auth.languageCode = 'pl';
 
   signInWithPopup(auth, provider)
+    .then(() => console.log('Authenticate the user with Google'))
     .catch((error) => console.error(error.message));
 
 }
@@ -47,7 +55,8 @@ const useFacebook = () => {
   auth.languageCode = 'pl';
 
   signInWithPopup(auth, provider)
-    .catch((error) => console.error(error.message));
+    .then(() => console.log('Authenticated the user with Facebook'))
+    .catch((error) => console.error(error));
 
 }
 
@@ -56,8 +65,11 @@ const Login = () => {
   const navigate = useNavigate();
 
   useEffect(() => onAuthStateChanged(getAuth(), (user) => {
-    if (user) navigate('/zbieranina')
-  }));
+    // if (user) navigate('/zbieranina')
+  })
+    .then(() => console.log('Navigated the user to zbieranina'))
+    .catch((error) => console.error(error))
+  );
 
   return (
     <article className='login'>
@@ -76,7 +88,7 @@ const Login = () => {
 
             </span>
 
-            <Link to='' tabIndex='0'><input type='button' value='Zaloguj się' id='button-login' className='button login-button' onClick={useEmail}/></Link>
+            <Link to=''><input type='button' value='Zaloguj się' id='button-login' className='button login-button link' onClick={useEmail}/></Link>
 
         </form>
 
@@ -93,7 +105,7 @@ const Login = () => {
 
               <hr className='break'/>
 
-              <p className='help-message'>Nie masz konta? &nbsp;<span className='signup-link'><Link to='/rejestracja' className='link' tabIndex='0'>Zarejestruj się</Link></span></p>
+              <p className='help-message'>Nie masz konta? &nbsp;<span className='signup-link'><Link to='/rejestracja' className='link'>Zarejestruj się</Link></span></p>
 
             </footer>
 
