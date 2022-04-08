@@ -8,7 +8,7 @@ import {
   getAuth,
   createUserWithEmailAndPassword,
   updateProfile
-} from 'firebase-auth';
+} from 'firebase/auth';
 
 // Component imports:
 
