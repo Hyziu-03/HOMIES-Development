@@ -1,10 +1,6 @@
 // React imports: 
 
 import {
-  useEffect 
-} from 'react';
-
-import {
   Link,
   useNavigate
 } from 'react-router-dom';
@@ -18,7 +14,7 @@ import {
   FacebookAuthProvider,
   signInWithEmailAndPassword,
   onAuthStateChanged
-} from 'firebase-auth';
+} from 'firebase/auth';
 
 // Component imports:
 
@@ -31,9 +27,8 @@ const useEmail = () => {
   const auth = getAuth();
 
   signInWithEmailAndPassword(auth, email, password)
-    .then(() => console.log('Authenticated the user with email and password'))
     .catch((error) => console.error(error.message));
-    
+  
 }
 
 const useGoogle = () => {
@@ -43,9 +38,8 @@ const useGoogle = () => {
   auth.languageCode = 'pl';
 
   signInWithPopup(auth, provider)
-    .then(() => console.log('Authenticate the user with Google'))
     .catch((error) => console.error(error.message));
-
+  
 }
 
 const useFacebook = () => {
@@ -55,7 +49,6 @@ const useFacebook = () => {
   auth.languageCode = 'pl';
 
   signInWithPopup(auth, provider)
-    .then(() => console.log('Authenticated the user with Facebook'))
     .catch((error) => console.error(error));
 
 }
@@ -64,12 +57,9 @@ const Login = () => {
 
   const navigate = useNavigate();
 
-  useEffect(() => onAuthStateChanged(getAuth(), (user) => {
-    // if (user) navigate('/zbieranina')
-  })
-    .then(() => console.log('Navigated the user to zbieranina'))
-    .catch((error) => console.error(error))
-  );
+  onAuthStateChanged(getAuth(), (user) => {
+    if (user) navigate('/zbieranina');
+  });
 
   return (
     <article className='login'>
@@ -88,7 +78,7 @@ const Login = () => {
 
             </span>
 
-            <Link to=''><input type='button' value='Zaloguj się' id='button-login' className='button login-button link' onClick={useEmail}/></Link>
+            <input type='button' value='Zaloguj się' id='button-login' className='button login-button link' onClick={useEmail}/>
 
         </form>
 

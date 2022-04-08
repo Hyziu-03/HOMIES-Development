@@ -8,16 +8,19 @@ import {
 
 import {
   initializeApp
-} from 'firebase-app';
+} from 'firebase/app';
 
 import {
   getAnalytics
-} from 'firebase-analytics';
+} from 'firebase/analytics';
 
+/*
 import {
   onAuthStateChanged,
-  getAuth
-} from 'firebase-auth';
+  getAuth,
+  signOut
+} from 'firebase/auth';
+*/
 
 // Component imports: 
 
@@ -39,6 +42,7 @@ const analytics = getAnalytics(app);
 
 const isAuthorised = () => {
 
+  /*
   try {
     onAuthStateChanged(getAuth(), (user) => {
       if (user) return true;
@@ -47,12 +51,15 @@ const isAuthorised = () => {
   } catch(error) {
     console.error(error);
   }
+  */
+
+  return false;
 
 }
 
 const Start = () => {
 
-  // let destination = isAuthorised ? '/logowanie' : '/logowanie';
+  let destination = isAuthorised() ? '/zbieranina' : '/logowanie';
 
   return (
     <article className='start'>
@@ -61,7 +68,7 @@ const Start = () => {
       
       <p className='quote' tabIndex='0'>Curabitur tincidunt lorem lobortis lorem venenatis, et porttitor dui porttitor. Nam vel malesuada tortor.</p>
 
-      <Link to='/logowanie'><button className='start-button button link'>Zacznij</button></Link>
+      <Link to={destination}><button className='start-button button link'>Zacznij</button></Link>
 
     </article>
   );
