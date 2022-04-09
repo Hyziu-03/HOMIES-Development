@@ -1,11 +1,14 @@
+// React imports: 
+
 import React from 'react';
 import ReactDOM from 'react-dom';
-
 import {
   BrowserRouter as Router,
   Route,
   Routes
 } from 'react-router-dom';
+
+// Component imports:
 
 import './styles/styles.css';
 import reportWebVitals from './reportWebVitals';
