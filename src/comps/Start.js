@@ -14,13 +14,10 @@ import {
   getAnalytics
 } from 'firebase/analytics';
 
-/*
 import {
   onAuthStateChanged,
-  getAuth,
-  signOut
+  getAuth
 } from 'firebase/auth';
-*/
 
 // Component imports: 
 
@@ -42,7 +39,6 @@ const analytics = getAnalytics(app);
 
 const isAuthorised = () => {
 
-  /*
   try {
     onAuthStateChanged(getAuth(), (user) => {
       if (user) return true;
@@ -51,9 +47,6 @@ const isAuthorised = () => {
   } catch(error) {
     console.error(error);
   }
-  */
-
-  return false;
 
 }
 

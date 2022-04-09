@@ -1,13 +1,17 @@
 // React imports:
 
-import { Link } from 'react-router-dom';
+import {
+  Link,
+  useNavigate
+} from 'react-router-dom';
 
 // Firebase imports:
 
 import {
   getAuth,
   createUserWithEmailAndPassword,
-  updateProfile
+  updateProfile,
+  onAuthStateChanged
 } from 'firebase/auth';
 
 // Component imports:
@@ -27,7 +31,6 @@ const createAccount = (email, password, firstName, lastName) => {
       updateProfile(auth.currentUser, {
         displayName: firstName + ' ' + lastName
       });
-      console.log('Updated the profile of the user');
     })
     .catch((error) => console.error(error));
 
@@ -35,18 +38,36 @@ const createAccount = (email, password, firstName, lastName) => {
 
 const getCredentials = () => {
 
-  const email = document.getElementById('email-sign-up').value;
-  const password = document.getElementById('password-sign-up').value;
   const firstName = document.getElementById('first-name-signup').value;
   const lastName = document.getElementById('last-name-signup').value;
+  const validName = validateName(firstName, lastName);
+
+  const email = document.getElementById('email-sign-up').value;
+  const validEmail = validateEmail(email);
+
+  const password = document.getElementById('password-sign-up').value;
+  const validPassword = validatePassword(password);
+
   const checkbox = document.getElementById('checkbox-signup').checked;
 
   try {
-    if (validateName(firstName, lastName) === true && validateEmail(email) === true && validatePassword(password) === true && checkbox) {
-      createAccount(email, password, firstName, lastName);
-      console.log('Validated the credentials of the user');
+    if(validName) {
+      if(validEmail) {
+        if(validPassword) {
+          if(checkbox) {
+            createAccount(email, password, firstName, lastName);
+          } else {
+            console.error('Nie zaakceptowano regulaminu i polityki prywatności')
+          }
+        } else {
+          console.error('Nieprawidłowe hasło')
+        }
+      } else {
+        console.error('Nieprawiłowy adres email lub hasło');
+      }
+
     } else {
-      console.error('The credentials of the user could not be verified');
+      console.error('Nieprawdiłowe imię lub nazwisko lub pusty formularz');
     }
   } catch(error) {
     console.error(error);
@@ -56,6 +77,12 @@ const getCredentials = () => {
 
 const SignUp = () => {
 
+  const navigate = useNavigate();
+
+  onAuthStateChanged(getAuth(), (user) => {
+    if (user) navigate('/logowanie');
+  });
+
   return (
     <article className='signup'>
 
@@ -63,10 +90,10 @@ const SignUp = () => {
 
         <form action='' method='' className='form'>
 
-            <input type='text' id='first-name-signup' className='input' placeholder='Imię' tabIndex='0'/>
-            <input type='text' id='last-name-signup' className='input' placeholder='Nazwisko' tabIndex='0'/>
-            <input type='email' id='email-sign-up' className='input' placeholder='Adres email' tabIndex='0'/>
-            <input type='password' id='password-sign-up' className='input' placeholder='Hasło' tabIndex='0'/>
+            <input type='text' id='first-name-signup' className='input' placeholder='Imię' tabIndex='0' />
+            <input type='text' id='last-name-signup' className='input' placeholder='Nazwisko' tabIndex='0' />
+            <input type='email' id='email-sign-up' className='input' placeholder='Adres email' tabIndex='0' />
+            <input type='password' id='password-sign-up' className='input' placeholder='Hasło' tabIndex='0' />
             
             <section className='confirmation'>
 
