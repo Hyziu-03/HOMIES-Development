@@ -20,6 +20,7 @@ import SignUp from './comps/SignUp';
 import Privacy from './comps/Privacy';
 import Terms from './comps/Terms';
 import Settings from './comps/Settings';
+import PasswordRecovery from './comps/PasswordRecovery';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -36,6 +37,7 @@ ReactDOM.render(
         <Route path='/ustawienia' element={<Settings />} />
         <Route path='/regulamin' element={<Terms />} />
         <Route path='/polityka-prywatnosci' element={<Privacy />} />
+        <Route path='/odzyskaj-haslo' element={<PasswordRecovery /> } />
         
       </Routes>
 

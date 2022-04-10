@@ -98,7 +98,7 @@ html {
           justify-content: space-evenly;
 }
 
-.zbieranina, .terms-of-use, .privacy-policy, .settings, .not-found {
+.zbieranina, .terms-of-use, .privacy-policy, .settings, .not-found, .password-recovery {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -125,7 +125,6 @@ html {
   -ms-flex-item-align: end;
       align-self: flex-end;
   margin-right: 16px;
-  font-weight: 700;
   min-height: 48px;
   min-width: 48px;
 }
