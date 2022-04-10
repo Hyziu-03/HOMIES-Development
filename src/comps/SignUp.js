@@ -90,10 +90,10 @@ const SignUp = () => {
 
         <form action='' method='' className='form'>
 
-            <input type='text' id='first-name-signup' className='input' placeholder='Imię' tabIndex='0' />
-            <input type='text' id='last-name-signup' className='input' placeholder='Nazwisko' tabIndex='0' />
-            <input type='email' id='email-sign-up' className='input' placeholder='Adres email' tabIndex='0' />
-            <input type='password' id='password-sign-up' className='input' placeholder='Hasło' tabIndex='0' />
+            <input type='text' id='first-name-signup' className='input' placeholder='Imię' tabIndex='0' required/>
+            <input type='text' id='last-name-signup' className='input' placeholder='Nazwisko' tabIndex='0' required/>
+            <input type='email' id='email-sign-up' className='input' placeholder='Adres email' tabIndex='0' required/>
+            <input type='password' id='password-sign-up' className='input' placeholder='Hasło' tabIndex='0' required/>
             
             <section className='confirmation'>
 

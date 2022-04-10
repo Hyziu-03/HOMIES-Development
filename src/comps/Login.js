@@ -68,17 +68,17 @@ const Login = () => {
 
         <form action='' method='' className='form'>
 
-            <input type='email' id='email-login' className='input' placeholder='Adres email' tabIndex='0'/>
+            <input type='email' id='email-login' className='input' placeholder='Adres email' tabIndex='0' required/>
 
             <span className='password-input'>
 
-              <input type='password' id='password-login' className='input' placeholder='Hasło' tabIndex='0'/> 
+              <input type='password' id='password-login' className='input' placeholder='Hasło' tabIndex='0' required/> 
 
-              <p className='password-tooltip' tabIndex='0'>Nie pamiętasz hasła?</p>
+              <p className='password-tooltip' tabIndex='0'><Link to='/odzyskaj-haslo' className='link'>Nie pamiętasz hasła?</Link></p>
 
             </span>
 
-            <input type='button' value='Zaloguj się' id='button-login' className='button login-button link' onClick={useEmail}/>
+            <input type='button' value='Zaloguj się' id='button-login' className='button login-button link' onClick={useEmail} required/>
 
         </form>
 
@@ -86,8 +86,8 @@ const Login = () => {
 
           <section className='social-media-login'>
 
-              <i className='fa-brands fa-google social-media' tabIndex='0' onClick={useGoogle}></i>
-              <i className='fa-brands fa-facebook-f social-media' tabIndex='0' onClick={useFacebook}></i>
+              <i className='fa-brands fa-google social-media' tabIndex='0' onClick={useGoogle}>&nbsp;Google</i>
+              <i className='fa-brands fa-facebook-f social-media' tabIndex='0' onClick={useFacebook}>&nbsp;Facebook</i>
 
             </section>
 
