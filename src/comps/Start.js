@@ -22,6 +22,9 @@ import {
 // Component imports: 
 
 import Logo from './Logo';
+import {
+  useTabIndex
+} from '../utils/modules';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyAhkZ7DS7BcnGHEwMkpOPc_7K8j8rW8b-A',
@@ -51,6 +54,8 @@ const isAuthorised = () => {
 }
 
 const Start = () => {
+
+  useTabIndex();
 
   let destination = isAuthorised() ? '/zbieranina' : '/logowanie';
 
