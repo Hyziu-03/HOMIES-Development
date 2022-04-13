@@ -12,30 +12,40 @@ import {
   getAuth,
   signInWithPopup,
   FacebookAuthProvider,
+  onAuthStateChanged,
   signInWithEmailAndPassword,
-  onAuthStateChanged
+  setPersistence, 
+  browserSessionPersistence
 } from 'firebase/auth';
 
 // Component imports:
 
 import Logo from './Logo';
 
-const useEmail = () => {
+const auth = getAuth();
+auth.languageCode = 'pl';
+
+const emailLogin = () => {
 
   const email = document.getElementById('email-login').value;
   const password = document.getElementById('password-login').value;
-  const auth = getAuth();
 
-  signInWithEmailAndPassword(auth, email, password)
+  setPersistence(auth, browserSessionPersistence)
+    .then(() => {
+
+      signInWithEmailAndPassword(auth, email, password);
+      return true;
+
+    })
     .catch((error) => console.error(error.message));
+
+    return false;
   
 }
 
 const useGoogle = () => {
 
   const provider = new GoogleAuthProvider();
-  const auth = getAuth();
-  auth.languageCode = 'pl';
 
   signInWithPopup(auth, provider)
     .catch((error) => console.error(error.message));
@@ -45,8 +55,6 @@ const useGoogle = () => {
 const useFacebook = () => {
 
   const provider = new FacebookAuthProvider();
-  const auth = getAuth();
-  auth.languageCode = 'pl';
 
   signInWithPopup(auth, provider)
     .catch((error) => console.error(error));
@@ -57,7 +65,11 @@ const Login = () => {
 
   const navigate = useNavigate();
 
-  onAuthStateChanged(getAuth(), (user) => {
+  const handleLogin = () => {
+    if (emailLogin()) navigate('/zbieranina');
+  }
+
+  onAuthStateChanged(auth, (user) => {
     if (user) navigate('/zbieranina');
   });
 
@@ -78,7 +90,7 @@ const Login = () => {
 
             </span>
 
-            <input type='button' value='Zaloguj się' id='button-login' className='button login-button link' onClick={useEmail} required/>
+            <input type='button' value='Zaloguj się' id='button-login' className='button login-button link' onClick={handleLogin} required/>
 
         </form>
 
