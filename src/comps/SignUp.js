@@ -20,11 +20,11 @@ import Logo from './Logo';
 
 // Module imports: 
 
-import { validateName, validateEmail, validatePassword } from '../utils/modules';
+import { validateName, validateEmail, validatePassword, validateCredentials } from '../utils/modules';
+
+const auth = getAuth();
 
 const createAccount = (email, password, firstName, lastName) => {
-
-  const auth = getAuth();
 
   createUserWithEmailAndPassword(auth, email, password)
     .then(() => {
@@ -38,41 +38,24 @@ const createAccount = (email, password, firstName, lastName) => {
 
 const getCredentials = () => {
 
+  // Credentials:
+
   const firstName = document.getElementById('first-name-signup').value;
   const lastName = document.getElementById('last-name-signup').value;
-  const validName = validateName(firstName, lastName);
-
   const email = document.getElementById('email-sign-up').value;
-  const validEmail = validateEmail(email);
-
   const password = document.getElementById('password-sign-up').value;
-  const validPassword = validatePassword(password);
-
   const checkbox = document.getElementById('checkbox-signup').checked;
 
-  try {
-    if(validName) {
-      if(validEmail) {
-        if(validPassword) {
-          if(checkbox) {
-            createAccount(email, password, firstName, lastName);
-          } else {
-            console.error('Nie zaakceptowano regulaminu i polityki prywatności')
-          }
-        } else {
-          console.error('Nieprawidłowe hasło')
-        }
-      } else {
-        console.error('Nieprawiłowy adres email lub hasło');
-      }
+  // Validation rules:
+  
+  const validName = validateName(firstName, lastName);
+  const validEmail = validateEmail(email);
+  const validPassword = validatePassword(password);
 
-    } else {
-      console.error('Nieprawdiłowe imię lub nazwisko lub pusty formularz');
-    }
-  } catch(error) {
-    console.error(error);
-  }
 
+  if(validateCredentials(validName, validEmail, validPassword, checkbox))
+    createAccount(email, password, firstName, lastName);  
+  
 }
 
 const SignUp = () => {
@@ -104,7 +87,7 @@ const SignUp = () => {
                 
               </span>
             
-              <Link to=''><button className='button' type='button' onClick={getCredentials}>Utwórz konto</button></Link>
+              <button className='button' type='button' tabIndex='0' onClick={getCredentials}>Utwórz konto</button>
 
             </section>
 
