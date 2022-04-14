@@ -72,7 +72,8 @@ html
 
 .zbieranina, .terms-of-use, .privacy-policy, .settings, .not-found, .password-recovery
     display: flex
-    justify-content: center
+    flex-direction: column 
+    align-items: center
 
 // Form selectors:
 
@@ -135,3 +136,13 @@ html
 .quote
     text-align: center
     max-width: $wide
+
+.browser 
+    @include display-fullscreen
+    @include center-absolute
+    z-index: 5
+    display: none
+    border-top: 10vh solid $white
+    border-bottom: 10vh solid $white
+    border-left: 5vw solid $white
+    border-right: 5vw solid $white 
