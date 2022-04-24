@@ -14,7 +14,6 @@ import './styles/styles.css';
 import reportWebVitals from './reportWebVitals';
 import Start from './comps/Start';
 import Zbieranina from './comps/Zbieranina';
-import Latest from './comps/Latest';
 import Login from './comps/Login';
 import SignUp from './comps/SignUp';
 import Privacy from './comps/Privacy';
@@ -33,7 +32,6 @@ ReactDOM.render(
         <Route path='/logowanie' element={<Login />} />
         <Route path='/rejestracja' element={<SignUp />} />
         <Route path='/zbieranina' element={<Zbieranina />} />
-        <Route path='/ostatnie' element={<Latest />} />
         <Route path='/ustawienia' element={<Settings />} />
         <Route path='/regulamin' element={<Terms />} />
         <Route path='/polityka-prywatnosci' element={<Privacy />} />

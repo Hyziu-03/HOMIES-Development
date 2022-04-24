@@ -10,7 +10,7 @@ import Menu from './Menu';
 
 const rejectAccess = () => !getAuth().currentUser ? console.warn('Zaloguj się, aby uzyskać uprawniony dostęp do Zbieraniny') : console.log();
   
-const toggleBrowser = () => setTimeout(() => document.getElementById('browser').style.display = 'block', 1000);
+const toggleBrowser = () => document.getElementById('browser').style.display = 'block';
 
 const Zbieranina = () => {
 

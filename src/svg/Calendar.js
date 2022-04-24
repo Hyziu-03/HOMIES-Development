@@ -1,6 +1,6 @@
 const Calendar = () => {
   return (
-    <>Calendar</>
+    <>Zbieranina</>
   );
 }
 
