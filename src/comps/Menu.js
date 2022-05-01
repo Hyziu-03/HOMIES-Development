@@ -13,11 +13,11 @@ const Menu = () => {
     <ol className='menu'>
 
       <Link to='/' className='link'>
-        <li className='menu-item'><Home /></li>
+        <li className='menu-item'><Calendar /></li>
       </Link>
 
       <Link to='/zbieranina' className='link'>
-        <li className='menu-item'><Calendar /></li>
+        <li className='menu-item'><Home /></li>
       </Link>
 
       <Link to='/ustawienia' className='link'>
