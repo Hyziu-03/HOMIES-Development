@@ -7,31 +7,40 @@ import {
 // Component imports:
 
 import Menu from './Menu';
+import Angielski from '../img/Angielski';
+import Polski from '../img/Polski';
+// import Matematyka from '../img/Matematyka';
 
 const rejectAccess = () => !getAuth().currentUser ? console.warn('Zaloguj się, aby uzyskać uprawniony dostęp do Zbieraniny') : console.log();
-  
-const toggleBrowser = () => document.getElementById('browser').style.display = 'block';
 
 const Zbieranina = () => {
 
   rejectAccess();
-
-  let url = 'https://www.matemaks.pl/';
   
   return (
     <article className='zbieranina'>
 
       <Menu />
 
-      <h1 className='subpage-heading'>Jesteś w Zbieraninie!</h1>
+      <h1 className='subpage-heading'><span className='greeting'>Cześć, XYZ!</span> <br/>   Czego chesz się dzisiaj nauczyć?</h1>
 
-      <iframe name='browser' id='browser' title='browser' className='browser'>
-        Twoja przeglądarka niestety nie obsługuje elementu ramki iframe.
-      </iframe>
+      <input type='search' placeholder='Wyszukaj' className='search-bar'/>
 
-      <button className='button'>
-        <a href={url} target='browser' className='link' onClick={toggleBrowser}>Otwórz w ramce</a>
-      </button>
+        <h2 className='subjects-heading'>Przedmioty</h2>
+        
+        <article className='subject-tiles'>
+
+          <section className='subject-tile polski'>
+            <Polski />
+            <span className='subject-name'>Polski</span>
+          </section>
+          
+          <section className='subject-tile'>
+            <Angielski />
+            <span className='subject-name'>Angielski</span>
+          </section>
+
+        </article>
 
     </article>
   );
