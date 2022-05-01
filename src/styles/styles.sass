@@ -32,6 +32,12 @@ html
     @include heading($role: secondary)
     margin: $base * 2 0
 
+.greeting
+    font-size: $base * 2.25
+
+.subjects-heading 
+    @include heading($role: subject)
+
 // Button selectors:
 
 .button 
@@ -57,7 +63,6 @@ html
     background-color: $dark-blue
 
 .menu-item 
-    margin: $base
     padding: $base
     color: $white 
 
@@ -74,6 +79,27 @@ html
     display: flex
     flex-direction: column 
     align-items: center
+
+// Zbieranina selectors:
+
+.subject-tiles
+    display: flex
+    align-self: flex-start
+    margin-left: $base * 1.5
+    flex-wrap: nowrap
+
+.subject-tile
+    border: 1px solid $black
+    border-radius: $base * 5/8
+    background: $light-blue
+    margin: 0 $base * 5/8
+    width: 150px
+
+.subject-name
+    text-align: center
+    font-size: $base * 1.25
+    font-weight: $semi-bold
+    margin: $base * 1.25 $base * 2.5
 
 // Form selectors:
 
@@ -114,6 +140,14 @@ html
 .password-input 
     display: flex
     flex-direction: column
+
+.search-bar 
+    border-radius: $base
+    padding: $base * .75
+    width: $wide
+    border: none
+    background: $light-blue
+    margin-bottom: $base * 2
 
 // Social media login selectors:
 

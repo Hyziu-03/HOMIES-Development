@@ -59,16 +59,18 @@ $black: #0b090a
 // Components: 
 
 @mixin heading($role)
-    text-align: center
     max-width: $wide 
 
     @if $role == primary
-        font-weight: $bold
         font-size: $base * 3
 
     @else if $role == secondary
-        font-weight: $semi-bold
         font-size: $base * 1.5
+
+    @else if $role == subject
+        font-size: $base
+        align-self: flex-start
+        margin-left: $base * 2.25
 
 @mixin button
     margin: $base * 2
