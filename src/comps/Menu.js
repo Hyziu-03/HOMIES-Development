@@ -12,7 +12,7 @@ const Menu = () => {
   return (
     <ol className='menu'>
 
-      <Link to='/' className='link'>
+      <Link to='/planer' className='link'>
         <li className='menu-item'><Calendar /></li>
       </Link>
 
