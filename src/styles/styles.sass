@@ -17,11 +17,10 @@ html
     font-weight: $bold
 
 .break 
-    background-color: $black
-    border: none
-    height: 1px
-    width: 100vw
-    margin: $base * 2.5 0  $base * 1.5 0
+    @include break($size: big) 
+
+.subject-tile-break
+    @include break($size: small)  
 
 // Heading selectors:
 
@@ -30,13 +29,12 @@ html
 
 .subpage-heading 
     @include heading($role: secondary)
-    margin: $base * 2 0
 
 .greeting
     font-size: $base * 2.25
 
 .subjects-heading 
-    @include heading($role: subject)
+    @include heading($role: subject) 
 
 // Button selectors:
 
@@ -75,10 +73,16 @@ html
     align-items: center
     justify-content: space-evenly
 
-.zbieranina, .terms-of-use, .privacy-policy, .settings, .not-found, .password-recovery
+.zbieranina, .terms-of-use, .privacy-policy, .settings, .not-found, .password-recovery, .planer
     display: flex
     flex-direction: column 
     align-items: center
+    overflow: hidden
+    margin-bottom: $base * 6
+
+.quote
+    text-align: center
+    max-width: $wide
 
 // Zbieranina selectors:
 
@@ -87,6 +91,8 @@ html
     align-self: flex-start
     margin-left: $base * 1.5
     flex-wrap: nowrap
+    margin-bottom: $base * 1.25
+    overflow: auto
 
 .subject-tile
     border: 1px solid $black
@@ -94,12 +100,45 @@ html
     background: $light-blue
     margin: 0 $base * 5/8
     width: 150px
+    display: flex
+    flex-direction: column
+
+.subject-image
+    border-top-left-radius: $base * 5/8
+    border-top-right-radius: $base * 5/8
 
 .subject-name
     text-align: center
     font-size: $base * 1.25
     font-weight: $semi-bold
-    margin: $base * 1.25 $base * 2.5
+    margin: $base * 0.75 $base * 2
+    display: block
+
+.last-lessons
+    background: $light-blue
+    width: $wide
+    border-radius: $base * 3/4
+    display: flex
+    align-items: center
+    margin: $base * 0.5
+
+.lesson-image
+    border-top-left-radius: $base * 5/8
+    border-bottom-left-radius: $base * 5/8
+
+.lesson-name
+    margin: $base * 1.25
+    font-weight: $semi-bold
+
+.browser 
+    @include display-fullscreen
+    @include center-absolute
+    z-index: 5
+    display: none
+    border-top: 10vh solid $white
+    border-bottom: 10vh solid $white
+    border-left: 5vw solid $white
+    border-right: 5vw solid $white 
 
 // Form selectors:
 
@@ -164,19 +203,3 @@ html
 .social-media-login 
     display: flex
     justify-content: center
-
-// Other selectors: 
-
-.quote
-    text-align: center
-    max-width: $wide
-
-.browser 
-    @include display-fullscreen
-    @include center-absolute
-    z-index: 5
-    display: none
-    border-top: 10vh solid $white
-    border-bottom: 10vh solid $white
-    border-left: 5vw solid $white
-    border-right: 5vw solid $white 

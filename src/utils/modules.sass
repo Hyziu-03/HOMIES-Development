@@ -66,11 +66,12 @@ $black: #0b090a
 
     @else if $role == secondary
         font-size: $base * 1.5
+        margin: $base * 2 0
 
     @else if $role == subject
         font-size: $base
         align-self: flex-start
-        margin-left: $base * 2.25
+        margin: $base * 0.5 0 $base * 0.5 $base * 2.25
 
 @mixin button
     margin: $base * 2
@@ -78,3 +79,15 @@ $black: #0b090a
     background-color: $black
     color: $white
     border: none
+
+@mixin break ($size)
+    background-color: $black
+    border: none
+    height: 1px
+    width 100%
+
+    @if $size == big
+        margin: $base * 2.5 0  $base * 1.5 0
+
+    @else if $size == small
+        margin: 3px 

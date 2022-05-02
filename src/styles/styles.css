@@ -23,8 +23,14 @@ html {
   background-color: #0b090a;
   border: none;
   height: 1px;
-  width: 100vw;
   margin: 40px 0 24px 0;
+}
+
+.subject-tile-break {
+  background-color: #0b090a;
+  border: none;
+  height: 1px;
+  margin: 3px;
 }
 
 .heading {
@@ -47,7 +53,7 @@ html {
   font-size: 16px;
   -ms-flex-item-align: start;
       align-self: flex-start;
-  margin-left: 36px;
+  margin: 8px 0 8px 36px;
 }
 
 .button {
@@ -105,7 +111,7 @@ html {
           justify-content: space-evenly;
 }
 
-.zbieranina, .terms-of-use, .privacy-policy, .settings, .not-found, .password-recovery {
+.zbieranina, .terms-of-use, .privacy-policy, .settings, .not-found, .password-recovery, .planer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -116,6 +122,13 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  overflow: hidden;
+  margin-bottom: 96px;
+}
+
+.quote {
+  text-align: center;
+  max-width: 80vw;
 }
 
 .subject-tiles {
@@ -127,6 +140,8 @@ html {
   margin-left: 24px;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
+  margin-bottom: 20px;
+  overflow: auto;
 }
 
 .subject-tile {
@@ -135,13 +150,65 @@ html {
   background: #a2d2ff;
   margin: 0 10px;
   width: 150px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.subject-image {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 .subject-name {
   text-align: center;
   font-size: 20px;
   font-weight: 500;
-  margin: 20px 40px;
+  margin: 12px 32px;
+  display: block;
+}
+
+.last-lessons {
+  background: #a2d2ff;
+  width: 80vw;
+  border-radius: 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 8px;
+}
+
+.lesson-image {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.lesson-name {
+  margin: 20px;
+  font-weight: 500;
+}
+
+.browser {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 5;
+  display: none;
+  border-top: 10vh solid #ffffff;
+  border-bottom: 10vh solid #ffffff;
+  border-left: 5vw solid #ffffff;
+  border-right: 5vw solid #ffffff;
 }
 
 .form, .confirmation {
@@ -235,26 +302,5 @@ html {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-}
-
-.quote {
-  text-align: center;
-  max-width: 80vw;
-}
-
-.browser {
-  width: 100vw;
-  height: 100vh;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  z-index: 5;
-  display: none;
-  border-top: 10vh solid #ffffff;
-  border-bottom: 10vh solid #ffffff;
-  border-left: 5vw solid #ffffff;
-  border-right: 5vw solid #ffffff;
 }
 /*# sourceMappingURL=styles.css.map */
