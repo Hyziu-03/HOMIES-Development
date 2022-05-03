@@ -15,27 +15,20 @@ const schema = new passwordValidator();
 
 schema
     .is().min(9)
-
     .has().letters()
     .has().uppercase()
     .has().lowercase()
-
     .has().digits()
     .has().symbols()
-
     .has().not().spaces();
 
-
 export const validateCredentials = (nameRule, emailRule, passwordRule, permissions) => {
-
     try {
         if (nameRule) {
             if (emailRule) {
                 if (passwordRule) {
                     if (permissions) {
-
                         return true;
-
                     } else {
                         console.error('Nie zaakceptowano regulaminu i polityki prywatności')
                     }
@@ -48,19 +41,15 @@ export const validateCredentials = (nameRule, emailRule, passwordRule, permissio
         } else {
             console.error('Nieprawdiłowe imię lub nazwisko lub pusty formularz');
         }
-
         return false;
-
     } catch (error) {
         console.error(error);
     }
-
 }
 
 // Integrating tabindex with the enter key:
 
 export const useTabIndex = () => {
-
     document.addEventListener('keydown', (event) => {
         try {
             if (event.key === 13) {
@@ -70,5 +59,4 @@ export const useTabIndex = () => {
             console.error(error);
         }
     });
-
 }
