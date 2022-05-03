@@ -1,7 +1,7 @@
 const Terms = () => {
   return (
     <article className='terms-of-use'>
-        <h1 className='subpage-heading'>Zapoznaj się z regulaminem!</h1>
+        <h1 className='secondary-heading'>Zapoznaj się z regulaminem!</h1>
     </article>
   )
 }

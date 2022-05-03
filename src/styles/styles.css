@@ -38,7 +38,7 @@ html {
   font-size: 48px;
 }
 
-.subpage-heading {
+.secondary-heading {
   max-width: 80vw;
   font-size: 24px;
   margin: 32px 0;
@@ -48,7 +48,7 @@ html {
   font-size: 36px;
 }
 
-.subjects-heading {
+.tertiary-heading {
   max-width: 80vw;
   font-size: 16px;
   -ms-flex-item-align: start;
@@ -111,7 +111,7 @@ html {
           justify-content: space-evenly;
 }
 
-.zbieranina, .terms-of-use, .privacy-policy, .settings, .not-found, .password-recovery, .planer {
+.zbieranina, .terms-of-use, .privacy-policy, .settings, .not-found, .password-recovery, .planer, .grade-choice {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -126,9 +126,19 @@ html {
   margin-bottom: 96px;
 }
 
+.grade-choice {
+  margin-top: 80px;
+}
+
 .quote {
   text-align: center;
   max-width: 80vw;
+}
+
+.back-icon {
+  position: fixed;
+  top: 16px;
+  left: 16px;
 }
 
 .subject-tiles {
@@ -162,6 +172,11 @@ html {
 .subject-image {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+}
+
+.grade-image {
+  border-radius: 20px;
+  border: 1px solid #0b090a;
 }
 
 .subject-name {
@@ -273,13 +288,56 @@ html {
           flex-direction: column;
 }
 
-.search-bar {
+.search {
+  height: 48px;
+  margin-bottom: 32px;
   border-radius: 16px;
   padding: 12px;
   width: 80vw;
-  border: none;
   background: #a2d2ff;
-  margin-bottom: 32px;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.search-icon {
+  margin-left: 8px;
+  margin-right: 16px;
+}
+
+.search-bar {
+  background: transparent;
+  border: none;
+  height: inherit;
+  width: inherit;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  line-height: 16px;
+}
+
+.search-bar:focus {
+  border: none;
+  outline: none;
+}
+
+.search-bar::-webkit-input-placeholder {
+  color: #0b090a;
+}
+
+.search-bar:-ms-input-placeholder {
+  color: #0b090a;
+}
+
+.search-bar::-ms-input-placeholder {
+  color: #0b090a;
+}
+
+.search-bar::placeholder {
+  color: #0b090a;
 }
 
 .social-media {

@@ -27,14 +27,14 @@ html
 .heading
     @include heading($role: primary)
 
-.subpage-heading 
+.secondary-heading 
     @include heading($role: secondary)
 
 .greeting
-    font-size: $base * 2.25
+    font-size: $base * 9/4
 
-.subjects-heading 
-    @include heading($role: subject) 
+.tertiary-heading 
+    @include heading($role: tertiary) 
 
 // Button selectors:
 
@@ -73,30 +73,38 @@ html
     align-items: center
     justify-content: space-evenly
 
-.zbieranina, .terms-of-use, .privacy-policy, .settings, .not-found, .password-recovery, .planer
+.zbieranina, .terms-of-use, .privacy-policy, .settings, .not-found, .password-recovery, .planer, .grade-choice
     display: flex
     flex-direction: column 
     align-items: center
     overflow: hidden
     margin-bottom: $base * 6
 
+.grade-choice
+    margin-top: $base * 5
+
 .quote
     text-align: center
     max-width: $wide
+
+.back-icon
+    position: fixed 
+    top: $base
+    left: $base 
 
 // Zbieranina selectors:
 
 .subject-tiles
     display: flex
     align-self: flex-start
-    margin-left: $base * 1.5
+    margin-left: $base * 3/2
     flex-wrap: nowrap
-    margin-bottom: $base * 1.25
+    margin-bottom: $base * 5/4
     overflow: auto
 
 .subject-tile
     border: 1px solid $black
-    border-radius: $base * 5/8
+    border-radius: $rounded-image
     background: $light-blue
     margin: 0 $base * 5/8
     width: 150px
@@ -104,14 +112,18 @@ html
     flex-direction: column
 
 .subject-image
-    border-top-left-radius: $base * 5/8
-    border-top-right-radius: $base * 5/8
+    border-top-left-radius: $rounded-image
+    border-top-right-radius: $rounded-image
+
+.grade-image
+    border-radius: $base * 5/4
+    border: 1px solid $black
 
 .subject-name
     text-align: center
-    font-size: $base * 1.25
+    font-size: $base * 5/4
     font-weight: $semi-bold
-    margin: $base * 0.75 $base * 2
+    margin: $base * 3/4 $base * 2
     display: block
 
 .last-lessons
@@ -120,14 +132,14 @@ html
     border-radius: $base * 3/4
     display: flex
     align-items: center
-    margin: $base * 0.5
+    margin: $base * 1/2
 
 .lesson-image
-    border-top-left-radius: $base * 5/8
-    border-bottom-left-radius: $base * 5/8
+    border-top-left-radius: $rounded-image
+    border-bottom-left-radius: $rounded-image
 
 .lesson-name
-    margin: $base * 1.25
+    margin: $base * 5/4
     font-weight: $semi-bold
 
 .browser 
@@ -146,18 +158,18 @@ html
     @include center-vertically
 
 .password-tooltip 
-    font-size: $base * 0.75
+    font-size: $base * 3/4
     align-self: flex-end
     margin-right: $base
     @include be-clickable
 
 .checkbox-container
-    margin: $base * 1.5
+    margin: $base * 3/2
     line-height: 150%
     text-align: center
 
 .checkbox
-    margin: $base * 0.5
+    margin: $base * 1/2
     
 .checkbox-label
     @include be-clickable
@@ -169,7 +181,7 @@ html
 
 .input 
     width: $wide
-    margin: $base * 0.5
+    margin: $base * 1/2
     padding: $base
     background-color: $white
     color: $black
@@ -180,19 +192,42 @@ html
     display: flex
     flex-direction: column
 
-.search-bar 
-    border-radius: $base
-    padding: $base * .75
-    width: $wide
-    border: none
-    background: $light-blue
+.search
+    height: $base * 3
     margin-bottom: $base * 2
+    border-radius: $base
+    padding: $base * 3/4
+    width: $wide
+    background: $light-blue
+    overflow: hidden
+    display: flex
+    align-items: center
+
+.search-icon
+    margin-left: $base * 1/2
+    margin-right: $base
+
+.search-bar
+    background: transparent 
+    border: none
+    height: inherit
+    width: inherit
+    font-family: 'Roboto', sans-serif 
+    font-size: $base 
+    line-height: $base
+
+    &:focus
+        border: none
+        outline: none
+
+.search-bar::placeholder
+    color: $black
 
 // Social media login selectors:
 
 .social-media
     margin: 0 $base
-    font-size: $base * 1.5
+    font-size: $base * 3/2
     padding: $base
     background-color: $white
     @include be-clickable
