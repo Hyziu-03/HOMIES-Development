@@ -14,7 +14,6 @@ import './styles/styles.css';
 import reportWebVitals from './reportWebVitals';
 import Start from './comps/Start';
 import Zbieranina from './comps/Zbieranina';
-import GradeChoice from './comps/GradeChoice';
 import Login from './comps/Login';
 import SignUp from './comps/SignUp';
 import Privacy from './comps/Privacy';
@@ -34,7 +33,6 @@ ReactDOM.render(
         <Route path='/logowanie' element={<Login />} />
         <Route path='/rejestracja' element={<SignUp />} />
         <Route path='/zbieranina' element={<Zbieranina />} />
-        <Route path='//zbieranina/wybor-klasy' element={<GradeChoice />} />
         <Route path='/planer' element={<Planer />} />
         <Route path='/ustawienia' element={<Settings />} />
         <Route path='/regulamin' element={<Terms />} />

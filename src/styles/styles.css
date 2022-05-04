@@ -26,7 +26,7 @@ html {
   margin: 40px 0 24px 0;
 }
 
-.subject-tile-break {
+.tile-break {
   background-color: #0b090a;
   border: none;
   height: 1px;
@@ -147,19 +147,14 @@ html {
   display: flex;
   -ms-flex-item-align: start;
       align-self: flex-start;
-  margin-left: 24px;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
+  margin-left: 24px;
   margin-bottom: 20px;
   overflow: auto;
 }
 
-.subject-tile {
-  border: 1px solid #0b090a;
-  border-radius: 10px;
-  background: #a2d2ff;
-  margin: 0 10px;
-  width: 150px;
+.tile {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -167,27 +162,19 @@ html {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  border: 1px solid #0b090a;
+  border-radius: 10px;
+  background: #a2d2ff;
+  margin: 0 10px;
+  width: 150px;
 }
 
-.subject-image {
+.tile-image {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
 
-.grade-image {
-  border-radius: 20px;
-  border: 1px solid #0b090a;
-}
-
-.subject-name {
-  text-align: center;
-  font-size: 20px;
-  font-weight: 500;
-  margin: 12px 32px;
-  display: block;
-}
-
-.last-lessons {
+.small-tile {
   background: #a2d2ff;
   width: 80vw;
   border-radius: 12px;
@@ -200,30 +187,22 @@ html {
   margin: 8px;
 }
 
-.lesson-image {
+.small-tile-image {
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
+}
+
+.subject-name {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 500;
+  margin: 12px 32px;
+  display: block;
 }
 
 .lesson-name {
   margin: 20px;
   font-weight: 500;
-}
-
-.browser {
-  width: 100vw;
-  height: 100vh;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  z-index: 5;
-  display: none;
-  border-top: 10vh solid #ffffff;
-  border-bottom: 10vh solid #ffffff;
-  border-left: 5vw solid #ffffff;
-  border-right: 5vw solid #ffffff;
 }
 
 .form, .confirmation {
@@ -240,12 +219,12 @@ html {
 }
 
 .password-tooltip {
+  min-height: 48px;
+  min-width: 48px;
   font-size: 12px;
   -ms-flex-item-align: end;
       align-self: flex-end;
   margin-right: 16px;
-  min-height: 48px;
-  min-width: 48px;
 }
 
 .checkbox-container {

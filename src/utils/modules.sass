@@ -57,6 +57,10 @@ $black: #0b090a
     left: 50%
     transform: translate(-50%, -50%)
 
+@mixin lay-vertically
+    display: flex
+    flex-direction: column
+
 // Components: 
 
 @mixin heading($role)
@@ -81,6 +85,15 @@ $black: #0b090a
     color: $white
     border: none
 
+@mixin input 
+    width: $wide
+    margin: $base * 1/2
+    padding: $base
+    background-color: $white
+    color: $black
+    border: 1px solid $black
+    @include be-clickable
+
 @mixin break ($size)
     background-color: $black
     border: none
@@ -92,3 +105,12 @@ $black: #0b090a
 
     @else if $size == small
         margin: 3px 
+
+@mixin fixed-menu 
+    list-style-type: none
+    display: flex
+    justify-content: space-around
+    position: fixed
+    bottom: 0
+    width: 100%
+    background-color: $dark-blue
