@@ -1,12 +1,4 @@
-# Downloaded modules:
-
 node_modules
-
-# Automatically generated CSS files:
-
 src/utils/modules.css.map
 src/utils/modules.css
-
-# Firebase cache:
-
 .firebase 
