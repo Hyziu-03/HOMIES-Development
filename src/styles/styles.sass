@@ -36,6 +36,10 @@ html
 .tertiary-heading 
     @include heading($role: tertiary) 
 
+.topics-heading
+    @include heading($role: primary)
+    text-align: center
+
 // Button selectors:
 
 .button 
@@ -65,13 +69,13 @@ html
     @include center-vertically
     justify-content: space-evenly
 
-.zbieranina, .terms-of-use, .privacy-policy, .settings, .not-found, .password-recovery, .planer, .grade-choice
+.zbieranina, .terms-of-use, .privacy-policy, .settings, .not-found, .password-recovery, .planer, .grade-choice, .topics
     @include center-vertically
     overflow: hidden
     margin-bottom: $base * 6
 
-.grade-choice
-    margin-top: $base * 5
+.topics
+    margin-top: $base * 4
 
 .quote
     text-align: center
@@ -90,7 +94,7 @@ html
     flex-wrap: nowrap
     margin-left: $base * 3/2
     margin-bottom: $base * 5/4
-    overflow: auto
+    overflow-x: scroll 
 
 .tile
     @include lay-vertically
@@ -98,7 +102,6 @@ html
     border-radius: $rounded-image
     background: $light-blue
     margin: 0 $base * 5/8
-    width: 150px
 
 .tile-image
     border-top-left-radius: $rounded-image
@@ -120,12 +123,18 @@ html
     text-align: center
     font-size: $base * 5/4
     font-weight: $semi-bold
-    margin: $base * 3/4 $base * 2
+    padding: $base * 3/4 $base * 2
     display: block
+    white-space: nowrap
 
 .lesson-name
     margin: $base * 5/4
     font-weight: $semi-bold
+
+.topics-image
+    border-radius: $base * 5/4
+    border: 2px solid $black
+    margin: $base 0 
 
 // Form selectors:
 

@@ -11,12 +11,32 @@ import SearchIcon from '../svg/SearchIcon';
 import Tile from './Tile';
 import SmallTile from "./SmallTile";
 
-const rejectAccess = () => !getAuth().currentUser ? console.warn('Zaloguj się, aby uzyskać uprawniony dostęp do Zbieraniny') : console.log();
+const loadImages = () => {
+  let images = document.querySelectorAll('img');
+
+  
+  for (let i = 0; i < 5; i += 1) {
+      setTimeout(() => {
+    if(!images) {
+    console.log('Załaduj loadera ');
+  } else if (images.naturalHeight === undefined) {
+    console.log('Załaduj loadera ');
+  }
+  }, 10000);
+  }
+  
+}
+
+const rejectAccess = () => {
+  !getAuth().currentUser ? console.warn('Zaloguj się, aby uzyskać uprawniony dostęp do Zbieraniny') : console.log();
+}
 
 const Zbieranina = () => {
 
   rejectAccess();
-  
+
+  loadImages();
+
   return (
     <article className='zbieranina'>
 
@@ -35,14 +55,18 @@ const Zbieranina = () => {
       <h2 className='tertiary-heading'>Przedmioty</h2>
 
       <article className='subject-tiles'>
-        <Tile name='Język Polski' />
-        <Tile name='Język Angielski' />
+        <Tile name='Polski' />
+        <Tile name='Matematyka' />
+        <Tile name='Angielski' />
       </article>
 
       <h2 className="tertiary-heading">Ostatnie lekcje</h2>
 
-      <SmallTile name='Młoda Polska' />
-      <SmallTile name='Wesele Wyspiańskiego' />
+      <SmallTile name='Temat 1' />
+      <SmallTile name='Temat 2' />
+      <SmallTile name='Temat 3' />
+      <SmallTile name='Temat 4' />
+      <SmallTile name='Temat 5' />
 
     </article>
   );
