@@ -40,6 +40,11 @@ html
     @include heading($role: primary)
     text-align: center
 
+.documents-heading
+    @include heading($role: primary)
+    margin-top: $base * 3
+    margin-bottom: $base 
+
 // Button selectors:
 
 .button 
@@ -69,7 +74,7 @@ html
     @include center-vertically
     justify-content: space-evenly
 
-.zbieranina, .terms-of-use, .privacy-policy, .settings, .not-found, .password-recovery, .planer, .grade-choice, .topics
+.zbieranina, .terms-of-use, .privacy-policy, .settings, .not-found, .password-recovery, .planer, .grade-choice, .topics, .documents
     @include center-vertically
     overflow: hidden
     margin-bottom: $base * 6
@@ -89,31 +94,17 @@ html
 // Zbieranina selectors:
 
 .subject-tiles
-    display: flex
-    align-self: flex-start
-    flex-wrap: nowrap
-    margin-left: $base * 3/2
-    margin-bottom: $base * 5/4
-    overflow-x: scroll 
+    @include side-container
 
 .tile
-    @include lay-vertically
-    border: 1px solid $black
-    border-radius: $rounded-image
-    background: $light-blue
-    margin: 0 $base * 5/8
+    @include tile
 
-.tile-image
+.tile-image, .documents-image
     border-top-left-radius: $rounded-image
     border-top-right-radius: $rounded-image
 
 .small-tile
-    background: $light-blue
-    width: $wide
-    border-radius: $base * 3/4
-    display: flex
-    align-items: center
-    margin: $base * 1/2
+    @include small-tile
 
 .small-tile-image
     border-top-left-radius: $rounded-image
@@ -125,7 +116,6 @@ html
     font-weight: $semi-bold
     padding: $base * 3/4 $base * 2
     display: block
-    white-space: nowrap
 
 .lesson-name
     margin: $base * 5/4
@@ -135,6 +125,38 @@ html
     border-radius: $base * 5/4
     border: 2px solid $black
     margin: $base 0 
+
+.item
+    @include lay-vertically
+    border-radius: $rounded-image
+    background: $light-blue
+    border: 1px solid $black 
+    margin: $base / 2 
+
+.item-info
+    @include lay-vertically
+    padding: $base * 1/2
+
+.item-name
+    font-size: $base 
+    font-weight: $semi-bold
+    margin: $base * 1/4
+
+.tag 
+    border-radius: $base * 1/4
+    background: $white 
+    text-align: center
+    width: max-content
+    padding: 2px 3px
+    margin: $base * 1/4
+
+.documents-image 
+    border-bottom: 1px solid $black 
+
+.documents-container
+    display: flex
+    flex-wrap: wrap 
+    justify-content: center
 
 // Form selectors:
 
@@ -170,47 +192,19 @@ html
     @include lay-vertically
 
 .search
-    height: $base * 3
-    margin-bottom: $base * 2
-    border-radius: $base
-    padding: $base * 3/4
-    width: $wide
-    background: $light-blue
-    overflow: hidden
-    display: flex
-    align-items: center
+    @include search-bar-container
 
 .search-icon
     margin-left: $base * 1/2
     margin-right: $base
 
 .search-bar
-    background: transparent 
-    border: none
-    height: inherit
-    width: inherit
-    font-family: 'Roboto', sans-serif 
-    font-size: $base 
-    line-height: $base
-
-    &:focus
-        border: none
-        outline: none
-
-.search-bar::placeholder
-    color: $black
+    @include search-bar
 
 // Social media login selectors:
 
 .social-media
-    margin: 0 $base
-    font-size: $base * 3/2
-    padding: $base
-    background-color: $white
-    @include be-clickable
-
-    &:hover
-        cursor: pointer
+    @include icon 
 
 .social-media-login 
     display: flex
