@@ -1,26 +1,6 @@
-// React imports: 
-
-import {
-  Link,
-  useNavigate
-} from 'react-router-dom';
-
-// Firebase imports:
-
-import {
-  GoogleAuthProvider,
-  getAuth,
-  signInWithPopup,
-  FacebookAuthProvider,
-  onAuthStateChanged,
-  signInWithEmailAndPassword,
-  setPersistence, 
-  browserSessionPersistence
-} from 'firebase/auth';
-
-// Component imports:
-
-import Logo from './Logo';
+import { Link, useNavigate } from 'react-router-dom';
+import { GoogleAuthProvider, getAuth, signInWithPopup, FacebookAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, setPersistence, browserSessionPersistence } from 'firebase/auth';
+import Logo from '../comps/Logo';
 
 const auth = getAuth();
 auth.languageCode = 'pl';

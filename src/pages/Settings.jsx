@@ -1,6 +1,4 @@
-// Component imports:
-
-import Menu from './Menu';
+import Menu from '../comps/Menu';
 
 const Settings = () => {
   return (

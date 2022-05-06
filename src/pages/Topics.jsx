@@ -1,7 +1,7 @@
 import BackIcon from '../svg/BackIcon';
-import MockImage from './MockImage';
-import SmallTile from './SmallTile';
-import Menu from './Menu';
+import MockImage from '../comps/MockImage';
+import SmallTile from '../comps/SmallTile';
+import Menu from '../comps/Menu';
 
 const Topics = (props) => {
   return (

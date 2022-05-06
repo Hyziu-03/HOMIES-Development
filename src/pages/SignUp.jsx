@@ -1,25 +1,6 @@
-// React imports:
-
-import {
-  Link,
-  useNavigate
-} from 'react-router-dom';
-
-// Firebase imports:
-
-import {
-  getAuth,
-  createUserWithEmailAndPassword,
-  updateProfile,
-  onAuthStateChanged
-} from 'firebase/auth';
-
-// Component imports:
-
-import Logo from './Logo';
-
-// Module imports: 
-
+import { Link, useNavigate } from 'react-router-dom';
+import { getAuth, createUserWithEmailAndPassword, updateProfile, onAuthStateChanged } from 'firebase/auth';
+import Logo from '../comps/Logo';
 import { validateName, validateEmail, validatePassword, validateCredentials } from '../utils/modules';
 
 const auth = getAuth();
