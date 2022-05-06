@@ -1,9 +1,4 @@
-// React imports:
-
 import { Link } from 'react-router-dom';
-
-// Component imports:
-
 import HomeIcon from '../svg/HomeIcon';
 import CalendarIcon from '../svg/CalendarIcon';
 import SettingsIcon from '../svg/SettingsIcon';

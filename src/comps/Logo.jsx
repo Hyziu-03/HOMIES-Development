@@ -1,5 +1,3 @@
-// React imports:
-
 import { Link } from 'react-router-dom';
 
 const Logo = () => {

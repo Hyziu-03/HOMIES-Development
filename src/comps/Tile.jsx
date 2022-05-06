@@ -1,11 +1,4 @@
-// React imports: 
-
-import { 
-    Link 
-} from 'react-router-dom';
-
-// Component imports:
-
+import { Link } from 'react-router-dom';
 import MockImage from './MockImage';
 // eslint-disable-next-line no-unused-vars
 import { latinise } from '../utils/modules';
