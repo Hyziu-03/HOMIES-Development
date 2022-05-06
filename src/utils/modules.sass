@@ -114,3 +114,63 @@ $black: #0b090a
     bottom: 0
     width: 100%
     background-color: $dark-blue
+
+@mixin side-container 
+    display: flex
+    align-self: flex-start
+    flex-wrap: nowrap
+    margin-left: $base * 3/2
+    margin-bottom: $base * 5/4
+    overflow-x: scroll 
+
+@mixin tile 
+    @include lay-vertically
+    border: 1px solid $black
+    border-radius: $rounded-image
+    background: $light-blue
+    margin: 0 $base * 5/8
+
+@mixin small-tile
+    background: $light-blue
+    width: $wide
+    border-radius: $base * 3/4
+    display: flex
+    align-items: center
+    margin: $base * 1/2
+
+@mixin search-bar-container 
+    height: $base * 3
+    margin-bottom: $base * 2
+    border-radius: $base
+    padding: $base * 3/4
+    width: $wide
+    background: $light-blue
+    overflow: hidden
+    display: flex
+    align-items: center
+
+@mixin search-bar
+    background: transparent 
+    border: none
+    height: inherit
+    width: inherit
+    font-family: 'Roboto', sans-serif 
+    font-size: $base 
+    line-height: $base
+
+    &:focus
+        border: none
+        outline: none
+
+    &::placeholder
+        color: $black
+
+@mixin icon 
+    margin: 0 $base
+    font-size: $base * 3/2
+    padding: $base
+    background-color: $white
+    @include be-clickable
+
+    &:hover
+        cursor: pointer
