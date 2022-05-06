@@ -1,27 +1,19 @@
-// React imports: 
-
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes
-} from 'react-router-dom';
-
-// Component imports:
-
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './styles/styles.css';
 import reportWebVitals from './reportWebVitals';
-import Start from './comps/Start';
-import Zbieranina from './comps/Zbieranina';
-import Login from './comps/Login';
-import SignUp from './comps/SignUp';
-import Privacy from './comps/Privacy';
-import Terms from './comps/Terms';
-import Settings from './comps/Settings';
-import PasswordRecovery from './comps/PasswordRecovery';
-import Planer from './comps/Planer';
-import Topics from './comps/Topics';
+import Start from './pages/Start';
+import Zbieranina from './pages/Zbieranina';
+import Login from './pages/Login';
+import SignUp from './pages/SignUp';
+import Privacy from './pages/Privacy';
+import Terms from './pages/Terms';
+import Settings from './pages/Settings';
+import PasswordRecovery from './pages/PasswordRecovery';
+import Planer from './pages/Planer';
+import Topics from './pages/Topics';
+import Documents from './pages/Documents';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -34,6 +26,7 @@ ReactDOM.render(
         <Route path='/logowanie' element={<Login />} />
         <Route path='/rejestracja' element={<SignUp />} />
         <Route path='/zbieranina' element={<Zbieranina />} />
+        <Route path='/zagadnienie' element={<Documents />} />
         <Route path='/zbieranina/polski' element={<Topics subject='Język polski'/>} />
         <Route path='/zbieranina/angielski' element={<Topics subject='Język angielski'/>} />
         <Route path='/zbieranina/matematyka' element={<Topics subject='Matematyka'/>} />
