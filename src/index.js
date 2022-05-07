@@ -17,31 +17,24 @@ import Documents from './pages/Documents';
 
 ReactDOM.render(
   <React.StrictMode>
-
     <Router>
-
       <Routes>
-
         <Route path='/' element={<Start />} />
         <Route path='/logowanie' element={<Login />} />
         <Route path='/rejestracja' element={<SignUp />} />
-        <Route path='/zbieranina' element={<Zbieranina />} />
         <Route path='/zagadnienie' element={<Documents />} />
-        <Route path='/zbieranina/polski' element={<Topics subject='Język polski'/>} />
-        <Route path='/zbieranina/angielski' element={<Topics subject='Język angielski'/>} />
-        <Route path='/zbieranina/matematyka' element={<Topics subject='Matematyka'/>} />
         <Route path='/planer' element={<Planer />} />
         <Route path='/ustawienia' element={<Settings />} />
         <Route path='/regulamin' element={<Terms />} />
         <Route path='/polityka-prywatnosci' element={<Privacy />} />
         <Route path='/odzyskaj-haslo' element={<PasswordRecovery /> } />
-        
+        <Route path='/zbieranina' element={<Zbieranina />} />
+        <Route path='/zbieranina/polski' element={<Topics subject='Język polski'/>} />
+        <Route path='/zbieranina/angielski' element={<Topics subject='Język angielski'/>} />
+        <Route path='/zbieranina/matematyka' element={<Topics subject='Matematyka'/>} />
       </Routes>
-
     </Router>
-
   </React.StrictMode>,
-  
   document.getElementById('root')
 );
 
