@@ -234,7 +234,7 @@ html {
   border-radius: 10px;
   background: #a2d2ff;
   border: 1px solid #0b090a;
-  margin: 8px;
+  margin: 4px;
 }
 
 .item-info {
@@ -275,9 +275,7 @@ html {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  width: 90vw;
 }
 
 .form, .confirmation {
