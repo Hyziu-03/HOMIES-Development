@@ -12,7 +12,6 @@ const Zbieranina = () => {
 
   return (
     <article className='zbieranina'>
-      <Menu />
       <h1 className='secondary-heading' tabIndex='0'>
         <span className='greeting'>Cześć, XYZ!</span> 
         <br/> Czego chcesz się dzisiaj nauczyć?
@@ -27,11 +26,12 @@ const Zbieranina = () => {
       </article>
 
       <h2 className='tertiary-heading'>Ostatnie lekcje</h2>
-      <SmallTile name='Temat 1' />
-      <SmallTile name='Temat 2' />
-      <SmallTile name='Temat 3' />
-      <SmallTile name='Temat 4' />
-      <SmallTile name='Temat 5' />
+      <SmallTile name='Temat' />
+      <SmallTile name='Temat' />
+      <SmallTile name='Temat' />
+      <SmallTile name='Temat' />
+      <SmallTile name='Temat' />
+      <Menu />
     </article>
   );
 
