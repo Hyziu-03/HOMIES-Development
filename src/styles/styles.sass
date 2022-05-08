@@ -4,6 +4,7 @@
 
 *
     @include reset-defaults
+    user-select: none
 
 html
     font-family: 'Roboto', sans-serif 
@@ -45,11 +46,24 @@ html
     margin-top: $base * 3
     margin-bottom: $base 
 
+.settings-heading
+    @include heading($role: primary)
+    align-self: flex-start
+    margin-top: $base * 6
+    margin-left: $base * 3/2
+
+.options-heading
+    @include heading($role: tertiary)
+    margin: $base * 3 $base * 7/4 $base * 1/2 $base 
+
 // Button selectors:
 
 .button 
     @include button
     @include be-clickable
+
+    &:hover
+        cursor: pointer 
 
 .start-button, .login-button 
     width: $wide
@@ -86,10 +100,11 @@ html
     text-align: center
     max-width: $wide
 
-.back-icon
-    position: fixed 
-    top: $base
-    left: $base 
+.back-zbieranina
+    @include back-icon($page: zbieranina)
+
+.back-settings
+    @include back-icon($page: settings)
 
 // Zbieranina selectors:
 
@@ -209,3 +224,25 @@ html
 .social-media-login 
     display: flex
     justify-content: center
+
+// Settings selectors:
+
+.option
+    display: flex
+    align-items: center
+    margin: $base * 3/4 0
+
+.profile-picture
+    @include small-square
+    border-radius: 50%
+
+.option-description
+    font-weight: $semi-bold
+    margin-left: $base * 3/2
+    margin-right: $base * 5
+
+.icon-container
+    @include small-square
+    @include center-both-axes
+    border-radius: $rounded-image
+    background: $light-blue
