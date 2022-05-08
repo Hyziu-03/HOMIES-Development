@@ -70,13 +70,13 @@ $black: #0b090a
         font-size: $base * 3
 
     @else if $role == secondary
-        font-size: $base * 1.5
+        font-size: $base * 3/2
         margin: $base * 2 0
 
     @else if $role == tertiary
         font-size: $base
         align-self: flex-start
-        margin: $base * 0.5 0 $base * 0.5 $base * 2.25
+        margin: $base * 1/2 0 $base * 1/2 $base * 9/4
 
 @mixin button
     margin: $base * 2
@@ -101,7 +101,7 @@ $black: #0b090a
     width 100%
 
     @if $size == big
-        margin: $base * 2.5 0  $base * 1.5 0
+        margin: $base * 5/2 0  $base * 3/2 0
 
     @else if $size == small
         margin: 3px 
@@ -174,3 +174,18 @@ $black: #0b090a
 
     &:hover
         cursor: pointer
+
+@mixin back-icon($page)
+    position: fixed 
+
+    @if $page == zbieranina
+        top: $base
+        left: $base
+    
+    @else if $page == settings
+        top: $base * 2
+        left: $base * 2
+
+@mixin small-square 
+    width: $base * 3
+    height: $base * 3
