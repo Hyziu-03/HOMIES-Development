@@ -372,6 +372,31 @@ html {
           flex-direction: column;
 }
 
+.password-login {
+  min-height: 48px;
+  min-width: 48px;
+  font-family: 'Roboto', sans-serif;
+  line-height: 16px;
+  border: none;
+}
+
+.password-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 16px;
+}
+
+.visibility-icon {
+  -webkit-transform: scale(0.6);
+          transform: scale(0.6);
+  position: relative;
+  left: 80px;
+}
+
 .search {
   height: 48px;
   margin-bottom: 32px;
