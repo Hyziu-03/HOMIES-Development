@@ -7,7 +7,7 @@ const Option = (props) => {
   let source = props.type === 'profile' ? auth.currentUser.photoURL : 'https://color-hex.org/colors/a2d2ff.png';
 
   return (
-    <section className="option">
+    <section className='option' tabIndex='0'>
         <img src={source} alt='' className='profile-picture'/>
         <span className='option-description'>Ustawienie</span>
         <span className='icon-container'><NextIcon /></span>
