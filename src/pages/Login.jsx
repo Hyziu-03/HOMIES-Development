@@ -1,6 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { GoogleAuthProvider, getAuth, signInWithPopup, FacebookAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, setPersistence, browserSessionPersistence } from 'firebase/auth';
 import Logo from '../comps/Logo';
+import VisibilityIcon from '../svg/VisibilityIcon';
 
 const auth = getAuth();
 auth.languageCode = 'pl';
@@ -56,18 +57,20 @@ const Login = () => {
 	return (
 		<article className='login'>
 			<Logo />
-				<form action='' method='' className='form'>
-					<input type='email' id='email-login' className='input' placeholder='Adres email' tabIndex='0' required/>
-					<span className='password-input'>
-						<input type='password' id='password-login' className='input' placeholder='Hasło' tabIndex='0' required/> 
-						<p className='password-tooltip' tabIndex='0'><Link to='/odzyskaj-haslo' className='link'>Nie pamiętasz hasła?</Link></p>
-						</span>
-					<input type='button' value='Zaloguj się' id='button-login' className='button login-button link' onClick={handleLogin} required/>
-				</form>
+			<form action='' method='' className='form'>
+				<input type='email' id='email-login' className='input' placeholder='Adres email' tabIndex='0' required/>
+				<span className='password-input'>
+					<span className='input password-bar'>
+						<input type='password' id='password-login' className='password-login' placeholder='Hasło' tabIndex='0' required/><VisibilityIcon />
+					</span>
+					<p className='password-tooltip' tabIndex='0'><Link to='/odzyskaj-haslo' className='link'>Nie pamiętasz hasła?</Link></p>
+				</span>
+				<input type='button' value='Zaloguj się' id='button-login' className='button login-button link' onClick={handleLogin} required/>
+			</form>
 			<section className='alt-login'>
 				<section className='social-media-login'>
-					<i className='fa-brands fa-google social-media' tabIndex='0' onClick={useGoogle}>&nbsp;Google</i>
-					<i className='fa-brands fa-facebook-f social-media' tabIndex='0' onClick={useFacebook}>&nbsp;Facebook</i>
+					<span className='social-media' tabIndex='0' onClick={useGoogle}>&nbsp;Google</span>
+					<span className='social-media' tabIndex='0' onClick={useFacebook}>&nbsp;Facebook</span>
 				</section>
 				<footer>
 					<hr className='break'/>
