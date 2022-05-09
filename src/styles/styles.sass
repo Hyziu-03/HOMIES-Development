@@ -206,6 +206,22 @@ html
 .password-input 
     @include lay-vertically
 
+.password-login
+    @include be-clickable  
+    font-family: 'Roboto', sans-serif  
+    line-height: $base
+    border: none 
+
+.password-bar
+    display: flex
+    align-items: center
+    padding: 0 $base
+
+.visibility-icon
+    transform: scale(.6)
+    position: relative
+    left: 5 * $base
+
 .search
     @include search-bar-container
 
