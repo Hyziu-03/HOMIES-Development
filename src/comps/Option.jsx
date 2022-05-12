@@ -10,7 +10,7 @@ const Option = (props) => {
     <section className='option' tabIndex='0'>
         <img src={source} alt='' className='profile-picture'/>
         <span className='option-description'>Ustawienie</span>
-        <span className='icon-container'><NextIcon /></span>
+        <NextIcon />
     </section>
   );
 }

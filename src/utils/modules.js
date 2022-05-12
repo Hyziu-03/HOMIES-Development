@@ -22,24 +22,23 @@ schema
 
 export const validateCredentials = (nameRule, emailRule, passwordRule, permissions) => {
     try {
-        if (nameRule) {
-            if (emailRule) {
-                if (passwordRule) {
-                    if (permissions) {
-                        return true;
-                    } else {
-                        console.error('Nie zaakceptowano regulaminu i polityki prywatności')
-                    }
-                } else {
-                    console.error('Nieprawidłowe hasło')
-                }
-            } else {
-                console.error('Nieprawiłowy adres email lub hasło');
-            }
-        } else {
-            console.error('Nieprawdiłowe imię lub nazwisko lub pusty formularz');
+        if (!nameRule) {
+            console.error('Nieprawdiłowe imię lub nazwisko lub pusty formularz'); 
+            return false;
         }
-        return false;
+        if (!emailRule) {
+            console.error('Nieprawiłowy adres email lub hasło');
+            return false;
+        }
+        if (!passwordRule) {
+            console.error('Nieprawidłowe hasło');
+            return false;
+        }
+        if (!permissions) {
+            console.error('Nie zaakceptowano regulaminu i polityki prywatności');
+            return false;
+        }
+        return true;
     } catch (error) {
         console.error(error);
     }

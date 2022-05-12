@@ -13,7 +13,7 @@ const Tile = (props) => {
         <section className='tile'>
             <MockImage size='175/175' class='tile-image'/>
             <hr className='tile-break'/>
-            <span className='subject-name'>{props.name}</span>
+            <div className='subject-name'>{props.name}</div>
         </section>
     </Link>
   );

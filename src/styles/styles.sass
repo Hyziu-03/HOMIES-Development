@@ -130,7 +130,6 @@ html
     font-size: $base * 5/4
     font-weight: $semi-bold
     padding: $base * 3/4 $base * 2
-    display: block
 
 .lesson-name
     margin: $base * 5/4
@@ -158,12 +157,7 @@ html
     margin: $base * 1/4
 
 .tag 
-    border-radius: $base * 1/4
-    background: $white 
-    text-align: center
-    width: max-content
-    padding: 2px 3px
-    margin: $base * 1/4
+    @include tag
 
 .documents-image 
     border-bottom: 1px solid $black 
