@@ -1,6 +1,11 @@
 import { Link } from 'react-router-dom';
 import MockImage from './MockImage';
 
+/**
+ * Rendering an element 
+ * @param {string} props.name Name of the element 
+ * @returns 
+ */
 const SmallTile = (props) => {
   return (
     <Link to='/zagadnienie' className='link'>

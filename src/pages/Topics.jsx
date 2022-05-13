@@ -3,6 +3,10 @@ import MockImage from '../comps/MockImage';
 import SmallTile from '../comps/SmallTile';
 import Menu from '../comps/Menu';
 
+/**
+ * Rendering collection of elements within a topic
+ * @param {string} props.subject Name of the subject 
+ */
 const Topics = (props) => {
   return (
     <article className='topics'>

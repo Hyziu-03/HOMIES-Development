@@ -3,6 +3,11 @@ import MockImage from './MockImage';
 // eslint-disable-next-line no-unused-vars
 import { latinise } from '../utils/modules';
 
+/**
+ * Rendering an element 
+ * @param {string} props.name Name of the element 
+ * @returns 
+ */
 const Tile = (props) => {
 
   const name = props.name.latinise().toLowerCase().trim().replaceAll(' ', '-');

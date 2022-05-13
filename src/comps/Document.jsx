@@ -1,5 +1,10 @@
 import MockImage from './MockImage';
 
+/**
+ * Tag generator
+ * @param {string} tags Comma separated information about a document
+ * @returns {array} Collection of <span> elements with the above data
+ */
 const generateTags = (tags) => {
     let data = tags;
     const array = data.split(',');

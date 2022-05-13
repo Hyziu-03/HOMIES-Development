@@ -19,8 +19,11 @@ const app = initializeApp(firebaseConfig);
 // eslint-disable-next-line no-unused-vars
 const analytics = getAnalytics(app);
 
+/**
+ * Checking if user is authorised
+ * @returns {boolean} Information if the user is authorised or not
+ */
 const isAuthorised = () => {
-
   try {
     onAuthStateChanged(getAuth(), (user) => {
       if (user) return true;
@@ -29,7 +32,6 @@ const isAuthorised = () => {
   } catch(error) {
     console.error(error);
   }
-
 }
 
 const Start = () => {
