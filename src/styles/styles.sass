@@ -1,6 +1,6 @@
-// Global selectors:
-    
 @import ../utils/modules
+
+// Global:    
 
 *
     @include reset-defaults
@@ -11,7 +11,7 @@ html
     font-size: $base 
     font-weight: $normal
 
-// Utility selectors:
+// Utilitties:
 
 .link
     @include use-hypertext
@@ -23,7 +23,7 @@ html
 .tile-break
     @include break($size: small)  
 
-// Heading selectors:
+// Headings:
 
 .heading
     @include heading($role: primary)
@@ -56,7 +56,7 @@ html
     @include heading($role: tertiary)
     margin: $base * 3 $base * 7/4 $base * 1/2 $base 
 
-// Button selectors:
+// Buttons:
 
 .button 
     @include button
@@ -72,7 +72,7 @@ html
     position: relative
     top: $base * 3
 
-// Menu selectors:
+// Menu:
 
 .menu 
     @include fixed-menu
@@ -81,7 +81,7 @@ html
     padding: $base
     color: $white 
 
-// Pages selectors:
+// Pages:
 
 .start, .login, .signup
     @include display-fullscreen
@@ -106,7 +106,7 @@ html
 .back-settings
     @include back-icon($page: settings)
 
-// Zbieranina selectors:
+// Zbieranina:
 
 .subject-tiles
     @include side-container
@@ -167,7 +167,7 @@ html
     flex-wrap: wrap 
     width: $wide * 9/8
 
-// Form selectors:
+// Form:
 
 .form, .confirmation
     @include center-vertically
@@ -192,7 +192,7 @@ html
 .help-message
     text-align: center
 
-// Input selectors:
+// Inputs:
 
 .input 
     @include input
@@ -226,7 +226,7 @@ html
 .search-bar
     @include search-bar
 
-// Social media login selectors:
+// Social media login:
 
 .social-media
     @include icon 
@@ -235,7 +235,7 @@ html
     display: flex
     justify-content: center
 
-// Settings selectors:
+// Settings:
 
 .option
     display: flex

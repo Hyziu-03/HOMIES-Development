@@ -15,6 +15,9 @@ import Planer from './pages/Planer';
 import Topics from './pages/Topics';
 import Documents from './pages/Documents';
 
+/**
+ * Mapping components to unique routes
+ */
 ReactDOM.render(
   <React.StrictMode>
     <Router>

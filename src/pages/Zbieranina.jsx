@@ -4,6 +4,7 @@ import Tile from '../comps/Tile';
 import SmallTile from '../comps/SmallTile';
 import SearchBar from '../comps/SearchBar';
 
+// This function will be rewritten in production
 const rejectAccess = () => !getAuth().currentUser ? console.warn('Zaloguj się, aby uzyskać uprawniony dostęp do Zbieraniny') : console.log();
 
 const Zbieranina = () => {
