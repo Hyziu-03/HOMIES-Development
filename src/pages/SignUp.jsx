@@ -5,6 +5,13 @@ import { validateName, validateEmail, validatePassword, validateCredentials } fr
 
 const auth = getAuth();
 
+/**
+ * Creating a user accont in Firebase
+ * @param {string} email User's email
+ * @param {string} password User's password
+ * @param {string} firstName User's first name
+ * @param {string} lastName User's last name
+ */
 const createAccount = (email, password, firstName, lastName) => {
 
   createUserWithEmailAndPassword(auth, email, password)
@@ -17,6 +24,9 @@ const createAccount = (email, password, firstName, lastName) => {
 
 }
 
+/**
+ * Validating user's data and creating an account
+ */
 const getCredentials = () => {
 
   const firstName = document.getElementById('first-name-signup').value;

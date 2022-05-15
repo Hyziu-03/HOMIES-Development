@@ -6,6 +6,10 @@ import VisibilityIcon from '../svg/VisibilityIcon';
 const auth = getAuth();
 auth.languageCode = 'pl';
 
+/**
+ * Logging the user in with their email
+ * @returns {boolean} Indicator if user has been logged in successfully
+ */
 const emailLogin = () => {
 
 	const email = document.getElementById('email-login').value;
@@ -24,6 +28,9 @@ const emailLogin = () => {
 	
 }
 
+/**
+ * Logging the user in with their Google account
+ */
 const useGoogle = () => {
 
 	const provider = new GoogleAuthProvider();
@@ -33,6 +40,9 @@ const useGoogle = () => {
 	
 }
 
+/**
+ * Logging the user in with their Facebook account 
+ */
 const useFacebook = () => {
 
 	const provider = new FacebookAuthProvider();

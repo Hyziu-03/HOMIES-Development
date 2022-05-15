@@ -1,5 +1,7 @@
 /* eslint-disable no-extend-native */
 
+import SmallTile from '../comps/SmallTile';
+
 const validator = require('email-validator');
 const passwordValidator = require('password-validator');
 
@@ -121,3 +123,19 @@ export let latinise;
  * @returns {string} Location within the app without domain 
  */
 export const getCurrentPathName = () => window.location.pathname;
+
+/**
+ * Displaying all the topics as tiles
+ * @returns {array} Collection of <SmallTile /> elements of the topics
+ */
+export const displayTopics = () => {
+  const element = <SmallTile name='Temat' />;
+  let array = [];
+  const quantity = 5;
+
+  for(let i = 0; i < quantity; i += 1) {
+    array[i] = element;
+  }
+
+  return array;
+}
