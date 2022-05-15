@@ -4,7 +4,7 @@ import MockImage from './MockImage';
 /**
  * Rendering an element 
  * @param {string} props.name Name of the element 
- * @returns 
+ * @returns A tile used for topics  or lastly used elements
  */
 const SmallTile = (props) => {
   return (

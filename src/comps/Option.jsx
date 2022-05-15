@@ -6,7 +6,7 @@ const auth = getAuth();
 /**
  * Rendering option in settings
  * @param {*} props.type Kind of an option type 
- * @returns 
+ * @returns A setting element
  */
 const Option = (props) => {
   let source = props.type === 'profile' ? auth.currentUser.photoURL : 'https://color-hex.org/colors/a2d2ff.png';

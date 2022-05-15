@@ -44,7 +44,7 @@ schema
  * @param {function} emailRule Email validation
  * @param {function} passwordRule Password validation
  * @param {boolean} permissions Checkboxes
- * @returns 
+ * @returns {boolean} Information if the credentials are okay or not
  */
 export const validateCredentials = (nameRule, emailRule, passwordRule, permissions) => {
     try {

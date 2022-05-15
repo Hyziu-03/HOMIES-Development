@@ -6,7 +6,7 @@ import { latinise } from '../utils/modules';
 /**
  * Rendering an element 
  * @param {string} props.name Name of the element 
- * @returns 
+ * @returns A tile for broader categories
  */
 const Tile = (props) => {
 
