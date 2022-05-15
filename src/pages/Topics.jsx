@@ -1,7 +1,7 @@
 import BackIcon from '../svg/BackIcon';
 import MockImage from '../comps/MockImage';
-import SmallTile from '../comps/SmallTile';
 import Menu from '../comps/Menu';
+import { displayTopics } from '../utils/modules';
 
 /**
  * Rendering collection of elements within a topic
@@ -16,11 +16,7 @@ const Topics = (props) => {
         <MockImage size='325/250' class='topics-image'/>
 
         <h2 className='tertiary-heading'>Działy</h2>
-        <SmallTile name='Temat' />
-        <SmallTile name='Temat' />
-        <SmallTile name='Temat' />
-        <SmallTile name='Temat' />
-        <SmallTile name='Temat' />
+        {displayTopics()}
         
         <Menu />
     </article>

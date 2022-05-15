@@ -1,8 +1,23 @@
 import { getAuth } from 'firebase/auth';
 import Menu from '../comps/Menu';
 import Tile from '../comps/Tile';
-import SmallTile from '../comps/SmallTile';
+import { displayTopics } from '../utils/modules';
 import SearchBar from '../comps/SearchBar';
+
+/**
+ * Displaying all the subjects as tiles
+ * @returns {array} Collection of <Tile /> elements of the subjects
+ */
+const displayTiles = () => {
+  const subjects = ['Polski', 'Matematyka', 'Angielski'];
+  const tiles = [];
+
+  for(let i = 0; i < subjects.length; i += 1) {
+    tiles[i] = <Tile name={subjects[i]} />;
+  }
+
+  return tiles;
+}
 
 // This function will be rewritten in production
 const rejectAccess = () => !getAuth().currentUser ? console.warn('Zaloguj się, aby uzyskać uprawniony dostęp do Zbieraniny') : console.log();
@@ -21,17 +36,11 @@ const Zbieranina = () => {
 
       <h2 className='tertiary-heading'>Przedmioty</h2>
       <article className='subject-tiles'>
-        <Tile name='Polski' />
-        <Tile name='Matematyka' />
-        <Tile name='Angielski' />
+        {displayTiles()}
       </article>
 
       <h2 className='tertiary-heading'>Ostatnie lekcje</h2>
-      <SmallTile name='Temat' />
-      <SmallTile name='Temat' />
-      <SmallTile name='Temat' />
-      <SmallTile name='Temat' />
-      <SmallTile name='Temat' />
+      {displayTopics()}
       <Menu />
     </article>
   );
