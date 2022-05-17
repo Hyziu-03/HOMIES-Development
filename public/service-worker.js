@@ -6,20 +6,14 @@ const addResourcesToCache = async (resources) => {
 // eslint-disable-next-line no-unused-vars
 const self = this;
 
-this.addEventListener("install", (event) => {
-  event.waitUntil(
-    addResourcesToCache([
-      '/maskable_icon_x16.png',
-      '/maskable_icon_x24.png',
-      '/maskable_icon_x32.png',
-      '/maskable_icon_x64.png',
-      '/maskable_icon_x192.png',
-      '/maskable_icon_x512.png'
-    ])
-  );
-  console.log('Successfully cached maskable icons')
-});
+/**
+ * Caching all the necessary files automatically
+ */
+this.addEventListener("install", (event) => event.waitUntil(addResourcesToCache([])));
 
+/**
+ * Making the app work offline
+ */
 this.addEventListener('fetch', (event) => {
   event.respondWith(async function() {
     try {
