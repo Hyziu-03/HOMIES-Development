@@ -1,6 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { getAuth, createUserWithEmailAndPassword, updateProfile, onAuthStateChanged } from 'firebase/auth';
-import Logo from '../comps/Logo';
+import Logo from '../svg/Logo';
 import { validateName, validateEmail, validatePassword, validateCredentials } from '../utils/modules';
 
 const auth = getAuth();
@@ -44,6 +44,9 @@ const getCredentials = () => {
   
 }
 
+/**
+ * Rendering the sign up form
+ */
 const SignUp = () => {
 
   const navigate = useNavigate();

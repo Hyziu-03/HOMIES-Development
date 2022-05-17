@@ -1,6 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { GoogleAuthProvider, getAuth, signInWithPopup, FacebookAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, setPersistence, browserSessionPersistence } from 'firebase/auth';
-import Logo from '../comps/Logo';
+import Logo from '../svg/Logo';
 import VisibilityIcon from '../svg/VisibilityIcon';
 
 const auth = getAuth();
@@ -31,7 +31,7 @@ const emailLogin = () => {
 /**
  * Logging the user in with their Google account
  */
-const useGoogle = () => {
+const googleLogin = () => {
 
 	const provider = new GoogleAuthProvider();
 
@@ -43,7 +43,7 @@ const useGoogle = () => {
 /**
  * Logging the user in with their Facebook account 
  */
-const useFacebook = () => {
+const facebookLogin = () => {
 
 	const provider = new FacebookAuthProvider();
 
@@ -52,12 +52,15 @@ const useFacebook = () => {
 
 }
 
+/**
+ * Rendering the login page
+ */
 const Login = () => {
 
 	const navigate = useNavigate();
 
 	const handleLogin = () => {
-		if (emailLogin()) navigate('/zbieranina');
+		if (emailLogin() || googleLogin() || facebookLogin()) navigate('/zbieranina');
 	}
 
 	onAuthStateChanged(auth, (user) => {
@@ -79,8 +82,8 @@ const Login = () => {
 			</form>
 			<section className='alt-login'>
 				<section className='social-media-login'>
-					<span className='social-media' tabIndex='0' onClick={useGoogle}>&nbsp;Google</span>
-					<span className='social-media' tabIndex='0' onClick={useFacebook}>&nbsp;Facebook</span>
+					<span className='social-media' tabIndex='0' onClick={googleLogin}>&nbsp;Google</span>
+					<span className='social-media' tabIndex='0' onClick={facebookLogin}>&nbsp;Facebook</span>
 				</section>
 				<footer>
 					<hr className='break'/>

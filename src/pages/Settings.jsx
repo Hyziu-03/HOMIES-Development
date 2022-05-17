@@ -2,6 +2,9 @@ import Menu from '../comps/Menu';
 import BackIcon from '../svg/BackIcon';
 import Option from '../comps/Option';
 
+/**
+ * Rendering the settings page
+ */
 const Settings = () => {
   return (
     <article className='settings'>

@@ -3,6 +3,9 @@ import HomeIcon from '../svg/HomeIcon';
 import CalendarIcon from '../svg/CalendarIcon';
 import SettingsIcon from '../svg/SettingsIcon';
 
+/**
+ * Rendering the menu
+ */
 const Menu = () => {
   return (
     <ol className='menu'>

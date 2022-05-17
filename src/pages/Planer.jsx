@@ -1,5 +1,8 @@
 import Menu from '../comps/Menu';
 
+/**
+ * Rendering the calendar
+ */
 const Planer = () => {
   return (
     <article className='planer'>

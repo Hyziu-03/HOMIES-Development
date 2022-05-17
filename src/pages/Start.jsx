@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { initializeApp } from 'firebase/app';
 import { getAnalytics } from 'firebase/analytics';
 import { onAuthStateChanged, getAuth } from 'firebase/auth';
-import Logo from '../comps/Logo';
+import Logo from '../svg/Logo';
 import { useTabIndex } from '../utils/modules';
 
 const firebaseConfig = {
@@ -34,6 +34,9 @@ const isAuthorised = () => {
   }
 }
 
+/**
+ * Rendering start page of the app
+ */
 const Start = () => {
 
   useTabIndex();

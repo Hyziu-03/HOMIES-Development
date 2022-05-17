@@ -1,5 +1,8 @@
 import { Link } from 'react-router-dom';
 
+/**
+ * Rendering the logo
+ */
 const Logo = () => {
   return (
     <Link to='/'>

@@ -22,6 +22,11 @@ const generateTags = (tags) => {
     return elements;
 }
 
+/**
+ * Rendering a single study material
+ * @param {string} props.name Name of the material
+ * @param {string} props.tags Comma separated tags of the material
+ */
 const Document = (props) => {
   return (
     <section className='item'>

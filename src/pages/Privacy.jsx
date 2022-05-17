@@ -1,3 +1,6 @@
+/**
+ * Rendering privacy policy
+ */
 const Privacy = () => {
   return (
     <article className='privacy-policy'>

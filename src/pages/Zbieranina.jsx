@@ -22,6 +22,9 @@ const displayTiles = () => {
 // This function will be rewritten in production
 const rejectAccess = () => !getAuth().currentUser ? console.warn('Zaloguj się, aby uzyskać uprawniony dostęp do Zbieraniny') : console.log();
 
+/**
+ * Rendering the homepage
+ */
 const Zbieranina = () => {
 
   rejectAccess();

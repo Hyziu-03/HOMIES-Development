@@ -16,6 +16,9 @@ const changeIcon = () => {
     input.type = isVisible ? 'text' : 'password';
 }
 
+/**
+ * Rendering visibility icon
+ */
 const VisibilityIcon = () => <svg id='svg' className='visibility-icon' xmlns='http://www.w3.org/2000/svg' height='48' width='48' onClick={changeIcon}><path d={hiddenIcon}></path></svg>;
   
 export default VisibilityIcon;

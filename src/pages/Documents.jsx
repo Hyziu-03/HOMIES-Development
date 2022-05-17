@@ -3,6 +3,9 @@ import Document from '../comps/Document';
 import SearchBar from '../comps/SearchBar';
 import BackIcon from '../svg/BackIcon';
 
+/**
+ * Rendering page with study materials 
+ */
 const Documents = () => {
 	return (
 		<section className='documents'>

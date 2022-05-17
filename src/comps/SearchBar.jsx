@@ -1,5 +1,8 @@
 import SearchIcon from '../svg/SearchIcon';
 
+/**
+ * Rendering the search bar
+ */
 const SearchBar = () => {
   return (
     <span className='search'>

@@ -1,3 +1,6 @@
+/**
+ * Rendering terms of service
+ */
 const Terms = () => {
   return (
     <article className='terms-of-use'>
