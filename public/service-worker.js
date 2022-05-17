@@ -1,6 +1,34 @@
-importScripts('https://storage.googleapis.com/workbox-cdn/releases/6.2.0/workbox-sw.js');
+const addResourcesToCache = async (resources) => {
+  const cache = await caches.open('cache');
+  await cache.addAll(resources);
+};
 
-workbox.routing.registerRoute(
-  ({ request }) => request.destination === 'image',
-  new workbox.strategies.CacheFirst()
-);
+// eslint-disable-next-line no-unused-vars
+const self = this;
+
+this.addEventListener("install", (event) => {
+  event.waitUntil(
+    addResourcesToCache([
+      '/maskable_icon_x16.png',
+      '/maskable_icon_x24.png',
+      '/maskable_icon_x32.png',
+      '/maskable_icon_x64.png',
+      '/maskable_icon_x192.png',
+      '/maskable_icon_x512.png'
+    ])
+  );
+  console.log('Successfully cached maskable icons')
+});
+
+this.addEventListener('fetch', (event) => {
+  event.respondWith(async function() {
+    try {
+      const response = await fetch(event.request);
+      const cache = await caches.open('cache');
+      cache.put(event.request.url, response.clone());
+      return response;
+    } catch (error) {
+      return caches.match(event.request);
+    }
+  }());
+});
