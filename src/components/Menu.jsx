@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
-import HomeIcon from '../svg/HomeIcon';
-import CalendarIcon from '../svg/CalendarIcon';
-import SettingsIcon from '../svg/SettingsIcon';
+import HomeIcon from '../icons/HomeIcon';
+import CalendarIcon from '../icons/CalendarIcon';
+import SettingsIcon from '../icons/SettingsIcon';
 
 /**
  * Rendering the menu

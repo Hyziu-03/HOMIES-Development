@@ -1,7 +1,6 @@
 /* eslint-disable no-extend-native */
 
-import SmallTile from '../comps/SmallTile';
-
+import SmallTile from '../components/SmallTile';
 const validator = require('email-validator');
 const passwordValidator = require('password-validator');
 
@@ -105,7 +104,6 @@ String.prototype.latinise = function () {
         return Latinise.latin_map[a] || a
     });
 };
-
 String.prototype.latinize = String.prototype.latinise;
 
 /**
@@ -115,7 +113,6 @@ String.prototype.latinize = String.prototype.latinise;
 String.prototype.isLatin = function () {
     return this === this.latinise()
 }
-
 export let latinise;
 
 /**
@@ -128,14 +125,11 @@ export const getCurrentPathName = () => window.location.pathname;
  * Displaying all the topics as tiles
  * @returns {array} Collection of <SmallTile /> elements of the topics
  */
-export const displayTopics = () => {
+export const displayTopics = (quantity) => {
   const element = <SmallTile name='Temat' />;
   let array = [];
-  const quantity = 5;
-
   for(let i = 0; i < quantity; i += 1) {
     array[i] = element;
   }
-
   return array;
 }
