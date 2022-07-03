@@ -1,7 +1,7 @@
-import Menu from '../comps/Menu';
-import Document from '../comps/Document';
-import SearchBar from '../comps/SearchBar';
-import BackIcon from '../svg/BackIcon';
+import Menu from '../components/Menu';
+import Document from '../components/Document';
+import SearchBar from '../components/SearchBar';
+import BackIcon from '../icons/BackIcon';
 
 /**
  * Rendering page with study materials 

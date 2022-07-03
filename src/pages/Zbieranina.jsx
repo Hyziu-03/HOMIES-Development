@@ -1,8 +1,8 @@
 import { getAuth } from 'firebase/auth';
-import Menu from '../comps/Menu';
-import Tile from '../comps/Tile';
-import { displayTopics } from '../utils/modules';
-import SearchBar from '../comps/SearchBar';
+import Menu from '../components/Menu';
+import Tile from '../components/Tile';
+import { displayTopics } from '../services/modules';
+import SearchBar from '../components/SearchBar';
 
 /**
  * Displaying all the subjects as tiles
@@ -43,7 +43,7 @@ const Zbieranina = () => {
       </article>
 
       <h2 className='tertiary-heading'>Ostatnie lekcje</h2>
-      {displayTopics()}
+      {displayTopics(5)}
       <Menu />
     </article>
   );
