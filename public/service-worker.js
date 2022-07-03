@@ -2,15 +2,9 @@ const addResourcesToCache = async (resources) => {
   const cache = await caches.open('cache');
   await cache.addAll(resources);
 };
-
 // eslint-disable-next-line no-unused-vars
 const self = this;
-
-/**
- * Caching all the necessary files automatically
- */
 this.addEventListener("install", (event) => event.waitUntil(addResourcesToCache([])));
-
 /**
  * Making the app work offline
  */

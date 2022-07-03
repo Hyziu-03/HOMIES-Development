@@ -1,6 +1,3 @@
-/**
- * Rendering the password recovery page
- */
 const PasswordRecovery = () => {
 	return (
 		<article className='password-recovery'>

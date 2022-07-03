@@ -1,7 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { GoogleAuthProvider, getAuth, signInWithPopup, FacebookAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, setPersistence, browserSessionPersistence } from 'firebase/auth';
-import Logo from '../svg/Logo';
-import VisibilityIcon from '../svg/VisibilityIcon';
+import Logo from '../icons/Logo';
+import VisibilityIcon from '../icons/VisibilityIcon';
 
 const auth = getAuth();
 auth.languageCode = 'pl';
@@ -28,9 +28,6 @@ const emailLogin = () => {
 	
 }
 
-/**
- * Logging the user in with their Google account
- */
 const googleLogin = () => {
 
 	const provider = new GoogleAuthProvider();
@@ -40,9 +37,6 @@ const googleLogin = () => {
 	
 }
 
-/**
- * Logging the user in with their Facebook account 
- */
 const facebookLogin = () => {
 
 	const provider = new FacebookAuthProvider();

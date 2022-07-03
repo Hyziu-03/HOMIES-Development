@@ -1,10 +1,7 @@
-import Menu from '../comps/Menu';
-import BackIcon from '../svg/BackIcon';
-import Option from '../comps/Option';
+import Menu from '../components/Menu';
+import BackIcon from '../icons/BackIcon';
+import Option from '../components/Option';
 
-/**
- * Rendering the settings page
- */
 const Settings = () => {
   return (
     <article className='settings'>
